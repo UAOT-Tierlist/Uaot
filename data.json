@@ -7,8 +7,8 @@
     "stats": {
       "control": "C",
       "chainkill": "A",
-      "front_kill": "S",
-      "reverse_front_kill": "A",
+      "front_kill": "C",
+      "reverse_front_kill": "C",
       "orbit": "B",
       "grappling": "C"
     },
