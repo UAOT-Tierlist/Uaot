@@ -18,24 +18,5 @@
       "smoothest"
     ],
     "gallery": []
-  },
-  {
-    "id": "d2",
-    "name": "Jaeger",
-    "pfp": "https://images.pexels.com/photos/7728229/pexels-photo-7728229.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "tier": "pool",
-    "stats": {
-      "control": "C",
-      "chainkill": "A",
-      "front_kill": "A",
-      "reverse_front_kill": "D",
-      "orbit": "C",
-      "grappling": "B"
-    },
-    "notes": "Aggressive. Needs better control.",
-    "tags": [
-      "speed-runner"
-    ],
-    "gallery": []
   }
 ]
