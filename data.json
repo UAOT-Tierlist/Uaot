@@ -5,7 +5,7 @@
     "pfp": "https://cdn.discordapp.com/avatars/1201215715529723919/fb08b206142a33d184f075b627c07f69.png?size=1024",
     "tier": "B",
     "stats": {
-      "control": "E",
+      "control": "B",
       "chainkill": "C",
       "front_kill": "S",
       "reverse_front_kill": "C",
@@ -44,7 +44,7 @@
       "front_kill": "B",
       "reverse_front_kill": "A",
       "orbit": "D",
-      "grappling": "D"
+      "grappling": "B"
     },
     "notes": "",
     "tags": [],
