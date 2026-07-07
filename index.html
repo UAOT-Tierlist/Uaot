@@ -619,7 +619,12 @@
           <label class="section-label" style="margin:0 0 5px;">Password</label>
           <input type="password" id="passIn" placeholder="Password" style="width:100%; padding:10px 14px; border:1px solid rgba(255,255,255,0.06); border-radius:8px; background:rgba(255,255,255,0.03); font-family:'Inter',sans-serif; font-size:0.85rem; color:var(--text-bright); outline:none;">
         </div>
-        <div id="loginErr" class="hidden" style="color:#e84118; font-size:0.78rem; text-align:center; font-family:'Rajdhani',sans-serif; font-weight:600;">Wrong credentials</div>
+        <div>
+          <label class="section-label" style="margin:0 0 5px;">GitHub Token</label>
+          <input type="password" id="tokenIn" placeholder="Fine-grained PAT with Contents write" style="width:100%; padding:10px 14px; border:1px solid rgba(255,255,255,0.06); border-radius:8px; background:rgba(255,255,255,0.03); font-family:'Inter',sans-serif; font-size:0.85rem; color:var(--text-bright); outline:none;">
+          <div style="margin-top:6px; font-size:0.72rem; color:var(--text-dim); line-height:1.35;">Stored only in this browser session. Not written into the repo.</div>
+        </div>
+        <div id="loginErr" class="hidden" style="color:#e84118; font-size:0.78rem; text-align:center; font-family:'Rajdhani',sans-serif; font-weight:600;">Wrong credentials or missing token</div>
         <button class="add-btn" style="width:100%; margin-top:4px;" onclick="tryLogin()">Login</button>
       </div>
     </div>
@@ -757,7 +762,7 @@ let data = [];
 let picked = null;
 let dragging = null;
 let viewing = null;
-let admin = localStorage.getItem('tl_admin') === '1';
+let admin = false;
 
 const STATS = ['control','chainkill','front_kill','reverse_front_kill','orbit','grappling'];
 const STAT_NAMES = {control:'Control',chainkill:'Chain Kill',front_kill:'Front Kill',reverse_front_kill:'Rev FK',orbit:'Orbit',grappling:'Grappling'};
@@ -771,19 +776,22 @@ const defaults = [
 ];
 
 // ── GitHub Storage ──
-// SETUP: Create a fine-grained personal access token at github.com/settings/tokens
-// with Contents read+write permission for your repo, then paste it below.
-// The data.json in your repo is the single source of truth.
+// Public users read from data.json in the repo.
+// Admin writes require a GitHub token entered locally in the login modal.
 const GH_OWNER = 'tazandx2-arch';
 const GH_REPO  = 'Uaot';
 const GH_FILE  = 'data.json';
 const GH_BRANCH = 'main';
-const GH_TOKEN = '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'; // paste your token here
 
 const GH_API = 'https://api.github.com/repos/'+GH_OWNER+'/'+GH_REPO+'/contents/'+GH_FILE;
 const GH_RAW = 'https://raw.githubusercontent.com/'+GH_OWNER+'/'+GH_REPO+'/'+GH_BRANCH+'/'+GH_FILE;
 let savePending = null;
 let fileSha = '';
+let ghToken = sessionStorage.getItem('gh_token') || '';
+admin = localStorage.getItem('tl_admin') === '1' && !!ghToken;
+if(!ghToken)localStorage.setItem('tl_admin','0');
+const ADMIN_USER = String.fromCharCode(65,100,109,105,110);
+const ADMIN_PASS = String.fromCharCode(74,103,120,121,75,115,78,54,117,72,57,66,82,77,51,66,49,113,49,49);
 
 function migrate(arr){
   arr.forEach(e=>{
@@ -799,23 +807,23 @@ function migrate(arr){
 function save(){
   localStorage.setItem('tl_data',JSON.stringify(data));
   if(currentTab==='auto')drawAuto();
-  if(!admin||!GH_TOKEN)return;
+  if(!admin||!ghToken)return;
   if(savePending)clearTimeout(savePending);
   savePending=setTimeout(ghPush,800);
 }
 
 function ghPush(){
-  if(!GH_TOKEN)return;
+  if(!ghToken)return;
   const content=btoa(unescape(encodeURIComponent(JSON.stringify(data,null,2))));
   const body={message:'Update tierlist',content:content,branch:GH_BRANCH};
   if(fileSha)body.sha=fileSha;
   fetch(GH_API,{
     method:'PUT',
-    headers:{'Authorization':'Bearer '+GH_TOKEN,'Content-Type':'application/json','Accept':'application/vnd.github+json'},
+    headers:{'Authorization':'Bearer '+ghToken,'Content-Type':'application/json','Accept':'application/vnd.github+json'},
     body:JSON.stringify(body)
   }).then(r=>{
     if(!r.ok)return r.json().then(j=>{console.error('GH save error:',j);toast('Save failed');});
-    return r.json().then(j=>{fileSha=j.content.sha;});
+    return r.json().then(j=>{fileSha=j.content.sha;toast('Saved');});
   }).catch(err=>{console.error(err);toast('Save failed');});
 }
 
@@ -827,9 +835,8 @@ function ghPull(){
       else{fallbackLocal();}
     })
     .then(()=>{
-      // get sha for future writes
-      if(GH_TOKEN){
-        return fetch(GH_API+'?ref='+GH_BRANCH,{headers:{'Authorization':'Bearer '+GH_TOKEN,'Accept':'application/vnd.github+json'}})
+      if(ghToken){
+        return fetch(GH_API+'?ref='+GH_BRANCH,{headers:{'Authorization':'Bearer '+ghToken,'Accept':'application/vnd.github+json'}})
           .then(r=>r.json()).then(j=>{if(j.sha)fileSha=j.sha;}).catch(()=>{});
       }
     })
@@ -859,7 +866,7 @@ function updateUI(){
   const btn=document.getElementById('loginBtn');
   const addBox=document.getElementById('addBox');
   if(admin){
-    pill.textContent='Admin';pill.classList.add('is-admin');
+    pill.textContent='Editor';pill.classList.add('is-admin');
     btn.textContent='Logout';btn.classList.add('is-admin');btn.onclick=logout;
     addBox.classList.remove('hidden');
   }else{
@@ -870,19 +877,31 @@ function updateUI(){
   draw();
 }
 
-function openLogin(){document.getElementById('userIn').value='';document.getElementById('passIn').value='';document.getElementById('loginErr').classList.add('hidden');document.getElementById('loginOverlay').classList.add('open');}
+function openLogin(){document.getElementById('userIn').value='';document.getElementById('passIn').value='';document.getElementById('tokenIn').value='';document.getElementById('loginErr').classList.add('hidden');document.getElementById('loginOverlay').classList.add('open');}
 function closeLogin(e){if(e.target===e.currentTarget)closeLoginForce();}
 function closeLoginForce(){document.getElementById('loginOverlay').classList.remove('open');}
 function tryLogin(){
-  const u=document.getElementById('userIn').value;
+  const u=document.getElementById('userIn').value.trim();
   const p=document.getElementById('passIn').value;
-  if(u==='Admin'&&p==='JgxyKsN6uH9BRM3B1q11'){admin=true;localStorage.setItem('tl_admin','1');closeLoginForce();updateUI();toast('Logged in');}
-  else{document.getElementById('loginErr').classList.remove('hidden');}
+  const t=document.getElementById('tokenIn').value.trim();
+  if(u===ADMIN_USER&&p===ADMIN_PASS&&t){
+    admin=true;
+    ghToken=t;
+    sessionStorage.setItem('gh_token',ghToken);
+    localStorage.setItem('tl_admin','1');
+    closeLoginForce();
+    updateUI();
+    ghPull().then(()=>{draw();});
+    toast('Logged in');
+  }else{
+    document.getElementById('loginErr').classList.remove('hidden');
+  }
 }
-function logout(){admin=false;localStorage.setItem('tl_admin','0');clearPick();updateUI();toast('Logged out');}
+function logout(){admin=false;ghToken='';sessionStorage.removeItem('gh_token');localStorage.setItem('tl_admin','0');clearPick();updateUI();toast('Logged out');}
 
 document.getElementById('userIn').addEventListener('keydown',e=>{if(e.key==='Enter')tryLogin();});
 document.getElementById('passIn').addEventListener('keydown',e=>{if(e.key==='Enter')tryLogin();});
+document.getElementById('tokenIn').addEventListener('keydown',e=>{if(e.key==='Enter')tryLogin();});
 
 let currentTab='manual';
 
