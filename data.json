@@ -134,5 +134,22 @@
     "notes": "",
     "tags": [],
     "gallery": []
+  },
+  {
+    "id": "e1783417179277in8z",
+    "name": "Zed/Dole",
+    "pfp": "https://cdn.discordapp.com/avatars/542609527464525824/5c0e96f18b291b00718edc7359744d5d.png?size=1024",
+    "tier": "pool",
+    "stats": {
+      "control": "B",
+      "chainkill": "A",
+      "front_kill": "B",
+      "reverse_front_kill": "A",
+      "orbit": "A",
+      "grappling": "C"
+    },
+    "notes": "",
+    "tags": [],
+    "gallery": []
   }
 ]
