@@ -40,7 +40,7 @@
     "tier": "B",
     "stats": {
       "control": "S",
-      "chainkill": "C",
+      "chainkill": "B",
       "front_kill": "A",
       "reverse_front_kill": "A",
       "orbit": "A",
