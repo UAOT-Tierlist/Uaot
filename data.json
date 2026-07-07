@@ -141,8 +141,8 @@
     "pfp": "https://cdn.discordapp.com/avatars/947061890998210580/f119eec91077ac32d77299095671c660.png?size=1024",
     "tier": "A",
     "stats": {
-      "control": "S",
-      "chainkill": "B",
+      "control": "A",
+      "chainkill": "S",
       "front_kill": "B",
       "reverse_front_kill": "D",
       "orbit": "B",
