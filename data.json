@@ -117,5 +117,22 @@
     "notes": "",
     "tags": [],
     "gallery": []
+  },
+  {
+    "id": "e1783417114069wxk3",
+    "name": "Katsu",
+    "pfp": "https://cdn.discordapp.com/avatars/705353392330899550/1c6ec731a821d8130ddff331641d1c0b.png?size=1024",
+    "tier": "pool",
+    "stats": {
+      "control": "F",
+      "chainkill": "A",
+      "front_kill": "C",
+      "reverse_front_kill": "B",
+      "orbit": "F",
+      "grappling": "E"
+    },
+    "notes": "",
+    "tags": [],
+    "gallery": []
   }
 ]
