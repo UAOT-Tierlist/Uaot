@@ -37,22 +37,5 @@
       "speed-runner"
     ],
     "gallery": []
-  },
-  {
-    "id": "d3",
-    "name": "Cadet 03",
-    "pfp": "https://images.pexels.com/photos/37456704/pexels-photo-37456704.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "tier": "pool",
-    "stats": {
-      "control": "D",
-      "chainkill": "E",
-      "front_kill": "D",
-      "reverse_front_kill": "F",
-      "orbit": "D",
-      "grappling": "D"
-    },
-    "notes": "",
-    "tags": [],
-    "gallery": []
   }
 ]
