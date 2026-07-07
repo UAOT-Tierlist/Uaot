@@ -39,8 +39,8 @@
     "pfp": "https://cdn.discordapp.com/avatars/1398643021301682206/edeba6aff319ddb6571e087f9ea86621.png?size=1024",
     "tier": "B",
     "stats": {
-      "control": "A",
-      "chainkill": "A",
+      "control": "S",
+      "chainkill": "C",
       "front_kill": "A",
       "reverse_front_kill": "A",
       "orbit": "A",
