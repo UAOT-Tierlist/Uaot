@@ -66,5 +66,22 @@
     "notes": "",
     "tags": [],
     "gallery": []
+  },
+  {
+    "id": "e178341705970044fh",
+    "name": "Zed",
+    "pfp": "https://cdn.discordapp.com/avatars/542609527464525824/5c0e96f18b291b00718edc7359744d5d.png?size=1024",
+    "tier": "pool",
+    "stats": {
+      "control": "C",
+      "chainkill": "B",
+      "front_kill": "C",
+      "reverse_front_kill": "S",
+      "orbit": "F",
+      "grappling": "A"
+    },
+    "notes": "",
+    "tags": [],
+    "gallery": []
   }
 ]
