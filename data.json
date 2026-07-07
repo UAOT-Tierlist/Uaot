@@ -39,12 +39,12 @@
     "pfp": "https://cdn.discordapp.com/avatars/1398643021301682206/edeba6aff319ddb6571e087f9ea86621.png?size=1024",
     "tier": "B",
     "stats": {
-      "control": "F",
-      "chainkill": "B",
-      "front_kill": "D",
+      "control": "A",
+      "chainkill": "A",
+      "front_kill": "A",
       "reverse_front_kill": "A",
-      "orbit": "S",
-      "grappling": "D"
+      "orbit": "A",
+      "grappling": "A"
     },
     "notes": "",
     "tags": [],
@@ -145,7 +145,7 @@
       "chainkill": "A",
       "front_kill": "S",
       "reverse_front_kill": "A",
-      "orbit": "C",
+      "orbit": "B",
       "grappling": "S"
     },
     "notes": "",
