@@ -120,24 +120,6 @@
     "missions": {}
   },
   {
-    "id": "e1783417114069wxk3",
-    "name": "Katsu",
-    "pfp": "https://cdn.discordapp.com/avatars/705353392330899550/1c6ec731a821d8130ddff331641d1c0b.png?size=1024",
-    "tier": "A",
-    "stats": {
-      "control": "A",
-      "chainkill": "A",
-      "front_kill": "S",
-      "reverse_front_kill": "B",
-      "orbit": "A",
-      "grappling": "S"
-    },
-    "notes": "",
-    "tags": [],
-    "gallery": [],
-    "missions": {}
-  },
-  {
     "id": "e1783417179277in8z",
     "name": "Zed/Dole",
     "pfp": "https://cdn.discordapp.com/avatars/542609527464525824/5c0e96f18b291b00718edc7359744d5d.png?size=1024",
@@ -154,6 +136,24 @@
     "tags": [
       "hall-of-fame"
     ],
+    "gallery": [],
+    "missions": {}
+  },
+  {
+    "id": "e1783417114069wxk3",
+    "name": "Katsu",
+    "pfp": "https://cdn.discordapp.com/avatars/705353392330899550/1c6ec731a821d8130ddff331641d1c0b.png?size=1024",
+    "tier": "A",
+    "stats": {
+      "control": "A",
+      "chainkill": "A",
+      "front_kill": "S",
+      "reverse_front_kill": "B",
+      "orbit": "A",
+      "grappling": "S"
+    },
+    "notes": "",
+    "tags": [],
     "gallery": [],
     "missions": {}
   },
