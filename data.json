@@ -100,8 +100,8 @@
       "chainkill": "F",
       "front_kill": "F",
       "orbit": "F",
-      "grappling": "S",
-      "consistency": "A"
+      "grappling": "F",
+      "consistency": "F"
     },
     "notes": "Inconsistent",
     "tags": [
