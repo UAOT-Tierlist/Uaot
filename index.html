@@ -365,6 +365,19 @@
     color: var(--text-bright); margin-bottom: 5px; letter-spacing: 2px;
   }
 
+  .pfp-tools {
+    display: flex; gap: 6px; justify-content: center; margin: 10px 0 2px;
+  }
+  .pfp-tool-btn {
+    padding: 5px 10px; border: 1px solid rgba(255,255,255,0.06); border-radius: 6px;
+    background: rgba(255,255,255,0.03); font-family: 'Rajdhani', sans-serif;
+    font-size: 0.68rem; font-weight: 700; color: var(--text-mid);
+    letter-spacing: 0.8px; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
+  }
+  .pfp-tool-btn:hover {
+    background: rgba(255,255,255,0.07); color: var(--text-bright); border-color: rgba(255,255,255,0.12);
+  }
+
   .modal-badge {
     display: inline-block; padding: 2px 14px; border-radius: 5px;
     font-family: 'Rajdhani', sans-serif; font-size: 0.68rem; font-weight: 700;
@@ -771,6 +784,10 @@
       <button class="close-btn" onclick="closeProfileForce()">X</button>
       <div class="modal-pfp-wrap">
         <img class="modal-pfp" id="modalPfp" src="" alt="">
+      </div>
+      <div class="pfp-tools">
+        <button class="pfp-tool-btn" onclick="copyProfileImage()">Copy Image</button>
+        <button class="pfp-tool-btn" onclick="saveProfileImage()">Save Image</button>
       </div>
       <div class="modal-title" id="modalName"></div>
       <span class="modal-badge" id="modalBadge"></span>
@@ -1311,6 +1328,38 @@ function closeProfileForce(){document.getElementById('profileOverlay').classList
 
 function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');}
 function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+
+function getCurrentProfileImage(){
+  const img=document.getElementById('modalPfp');
+  return img&&img.src?img.src:'';
+}
+
+async function copyProfileImage(){
+  const src=getCurrentProfileImage();
+  if(!src){toast('No image');return;}
+  try{
+    const res=await fetch(src,{mode:'cors'});
+    const blob=await res.blob();
+    await navigator.clipboard.write([new ClipboardItem({[blob.type||'image/png']:blob})]);
+    toast('Image copied');
+  }catch(e){
+    console.error(e);
+    toast('Copy blocked by source');
+  }
+}
+
+function saveProfileImage(){
+  const src=getCurrentProfileImage();
+  if(!src){toast('No image');return;}
+  const a=document.createElement('a');
+  a.href=src;
+  a.download='profile-image';
+  a.target='_blank';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  toast('Download started');
+}
 
 function getActiveTiers(){
   return currentTab==='auto'?document.getElementById('autoTiers'):document.getElementById('tiers');
