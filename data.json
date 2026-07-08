@@ -184,24 +184,6 @@
     }
   },
   {
-    "id": "e17834861725549ok7",
-    "name": "LegDkGend",
-    "pfp": "https://cdn.discordapp.com/avatars/1230967364183658567/cd7e87cc3ae851644fc87f2c869980bd.png?size=1024",
-    "tier": "C",
-    "stats": {
-      "control": "B",
-      "chainkill": "C",
-      "front_kill": "A",
-      "reverse_front_kill": "E",
-      "orbit": "D",
-      "grappling": "C"
-    },
-    "notes": "",
-    "tags": [],
-    "gallery": [],
-    "missions": {}
-  },
-  {
     "id": "e1783486252611qabd",
     "name": "The one with energy",
     "pfp": "https://cdn.discordapp.com/avatars/1468669989492887662/2a6b9727d3cc678bae58d691fe4908eb.png?size=1024",
@@ -213,6 +195,24 @@
       "reverse_front_kill": "D",
       "orbit": "E",
       "grappling": "A"
+    },
+    "notes": "",
+    "tags": [],
+    "gallery": [],
+    "missions": {}
+  },
+  {
+    "id": "e17834861725549ok7",
+    "name": "LegDkGend",
+    "pfp": "https://cdn.discordapp.com/avatars/1230967364183658567/cd7e87cc3ae851644fc87f2c869980bd.png?size=1024",
+    "tier": "C",
+    "stats": {
+      "control": "B",
+      "chainkill": "C",
+      "front_kill": "A",
+      "reverse_front_kill": "E",
+      "orbit": "D",
+      "grappling": "C"
     },
     "notes": "",
     "tags": [],
