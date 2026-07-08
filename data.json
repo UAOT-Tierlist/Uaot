@@ -236,7 +236,9 @@
       "pathing": "D"
     },
     "notes": "",
-    "tags": [],
+    "tags": [
+      "hall-of-fame"
+    ],
     "gallery": [],
     "missions": {}
   },
