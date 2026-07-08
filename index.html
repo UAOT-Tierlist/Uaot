@@ -1283,7 +1283,7 @@ function ghPush(){
 }
 
 function ghPull(){
-  // Try raw CDN first, then fall back to GitHub API
+  // Try raw CDN first, then fall back to GitHu API
   return fetchDataRaw()
     .then(d=>{
       if(Array.isArray(d)&&d.length>0){data=d;migrate(data);}
