@@ -96,12 +96,12 @@
     "pfp": "https://cdn.discordapp.com/avatars/542609527464525824/5c0e96f18b291b00718edc7359744d5d.png?size=1024",
     "tier": "S",
     "stats": {
-      "control": "F",
-      "chainkill": "F",
-      "front_kill": "F",
-      "orbit": "F",
-      "grappling": "F",
-      "consistency": "F"
+      "control": "S",
+      "chainkill": "S",
+      "front_kill": "S",
+      "orbit": "S",
+      "grappling": "S",
+      "consistency": "S"
     },
     "notes": "Inconsistent",
     "tags": [
