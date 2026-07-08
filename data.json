@@ -157,7 +157,9 @@
     "notes": "",
     "tags": [],
     "gallery": [],
-    "missions": {}
+    "missions": {
+      "forest_base": "1:32"
+    }
   },
   {
     "id": "e17834171459164m6y",
