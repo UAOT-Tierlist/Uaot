@@ -14,7 +14,8 @@
     },
     "notes": "Tied With Womp. Could be better",
     "tags": [],
-    "gallery": []
+    "gallery": [],
+    "missions": {}
   },
   {
     "id": "e1783416992429f5ak",
@@ -36,7 +37,8 @@
     "gallery": [
       "https://media.discordapp.net/attachments/1523664596072792145/1523969776718708886/image.png?ex=6a4e0af4&is=6a4cb974&hm=756534b9709fe2265c6b0ebc22f3573a24587167284c5c47e01938f25419cea7&=&format=webp&quality=lossless&width=541&height=644",
       "https://media.discordapp.net/attachments/1523664596072792145/1523969776412655716/image.png?ex=6a4e0af4&is=6a4cb974&hm=bcf75406b91cb649bdba0cc0c420843ec516681c9044c0fdbc83228a6579ecc8&=&format=webp&quality=lossless&width=549&height=637"
-    ]
+    ],
+    "missions": {}
   },
   {
     "id": "e1783416766069zp3f",
@@ -56,7 +58,8 @@
     "gallery": [
       "https://media.discordapp.net/attachments/1523664596072792145/1523969776412655716/image.png?ex=6a4e0af4&is=6a4cb974&hm=bcf75406b91cb649bdba0cc0c420843ec516681c9044c0fdbc83228a6579ecc8&=&format=webp&quality=lossless&width=549&height=637",
       "https://media.discordapp.net/attachments/1523664596072792145/1523969776718708886/image.png?ex=6a4e0af4&is=6a4cb974&hm=756534b9709fe2265c6b0ebc22f3573a24587167284c5c47e01938f25419cea7&=&format=webp&quality=lossless&width=541&height=644"
-    ]
+    ],
+    "missions": {}
   },
   {
     "id": "e1783417045332a5ky",
@@ -75,7 +78,8 @@
     "tags": [
       "founder-of-arena"
     ],
-    "gallery": []
+    "gallery": [],
+    "missions": {}
   },
   {
     "id": "e1783417078293s2xf",
@@ -94,7 +98,8 @@
     "tags": [
       "hall-of-fame"
     ],
-    "gallery": []
+    "gallery": [],
+    "missions": {}
   },
   {
     "id": "e1783417095621foel",
@@ -111,7 +116,8 @@
     },
     "notes": "",
     "tags": [],
-    "gallery": []
+    "gallery": [],
+    "missions": {}
   },
   {
     "id": "e1783417114069wxk3",
@@ -128,7 +134,8 @@
     },
     "notes": "",
     "tags": [],
-    "gallery": []
+    "gallery": [],
+    "missions": {}
   },
   {
     "id": "e1783417179277in8z",
@@ -147,7 +154,8 @@
     "tags": [
       "hall-of-fame"
     ],
-    "gallery": []
+    "gallery": [],
+    "missions": {}
   },
   {
     "id": "e17834171459164m6y",
@@ -164,7 +172,8 @@
     },
     "notes": "S tier soon.",
     "tags": [],
-    "gallery": []
+    "gallery": [],
+    "missions": {}
   },
   {
     "id": "e17834861725549ok7",
@@ -181,7 +190,8 @@
     },
     "notes": "",
     "tags": [],
-    "gallery": []
+    "gallery": [],
+    "missions": {}
   },
   {
     "id": "e1783486197578d12p",
@@ -198,7 +208,8 @@
     },
     "notes": "",
     "tags": [],
-    "gallery": []
+    "gallery": [],
+    "missions": {}
   },
   {
     "id": "e17834862306998fcp",
@@ -215,13 +226,14 @@
     },
     "notes": "",
     "tags": [],
-    "gallery": []
+    "gallery": [],
+    "missions": {}
   },
   {
     "id": "e1783486252611qabd",
     "name": "The one with energy",
     "pfp": "https://cdn.discordapp.com/avatars/1468669989492887662/2a6b9727d3cc678bae58d691fe4908eb.png?size=1024",
-    "tier": "pool",
+    "tier": "C",
     "stats": {
       "control": "F",
       "chainkill": "S",
@@ -232,6 +244,7 @@
     },
     "notes": "",
     "tags": [],
-    "gallery": []
+    "gallery": [],
+    "missions": {}
   }
 ]
