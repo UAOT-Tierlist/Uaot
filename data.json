@@ -139,7 +139,9 @@
       "hall-of-fame"
     ],
     "gallery": [],
-    "missions": {}
+    "missions": {
+      "forest_base": "1:40"
+    }
   },
   {
     "id": "e1783417114069wxk3",
