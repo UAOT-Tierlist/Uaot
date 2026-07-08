@@ -288,5 +288,23 @@
     "tags": [],
     "gallery": [],
     "missions": {}
+  },
+  {
+    "id": "e17835122556668fc9",
+    "name": "klefend",
+    "pfp": "https://cdn.discordapp.com/avatars/945669909063532554/c40694ad7fd4b067713d5bd89225e61a.png?size=1024",
+    "tier": "pool",
+    "stats": {
+      "control": "B",
+      "chainkill": "C",
+      "front_kill": "A",
+      "consistency": "E",
+      "orbit": "B",
+      "grappling": "B"
+    },
+    "missions": {},
+    "notes": "",
+    "tags": [],
+    "gallery": []
   }
 ]
