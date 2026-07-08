@@ -97,7 +97,7 @@
     "tier": "S",
     "stats": {
       "control": "A",
-      "chainkill": "S",
+      "chainkill": "A",
       "front_kill": "S",
       "orbit": "A",
       "grappling": "S",
