@@ -423,7 +423,7 @@
     box-shadow: 0 20px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
     transform: translateY(25px) scale(0.96);
     transition: transform 0.35s ease;
-    overflow: hidden; max-height: 88vh; overflow-y: auto;
+    overflow-x: visible; overflow-y: auto; max-height: 88vh;
   }
   .overlay.open .modal-box { transform: translateY(0) scale(1); }
   .modal-box::-webkit-scrollbar { width: 4px; }
@@ -1546,46 +1546,64 @@ function closeProfileForce(){document.getElementById('profileOverlay').classList
 function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');}
 function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
 
-function prepProfileCapture(){
-  const box=document.querySelector('#profileOverlay .modal-box');
-  const tools=box.querySelector('.pfp-tools');
-  const close=box.querySelector('.close-btn');
-  const del=box.querySelector('#delBtn');
-  const notes=document.getElementById('notesArea');
-  const prev={
-    tools:tools?tools.style.display:'',
-    close:close?close.style.display:'',
-    del:del?del.style.display:'',
-    notesBg:notes?notes.style.background:'',
-    notesBorder:notes?notes.style.borderColor:'',
-    boxShadow:box?box.style.boxShadow:'',
-    bg:box?box.style.background:'',
-    backdrop:box?box.style.backdropFilter:''
-  };
-  if(tools)tools.style.display='none';
-  if(close)close.style.display='none';
-  if(del)del.style.display='none';
-  if(notes){notes.style.background='rgba(255,255,255,0.04)';notes.style.borderColor='rgba(255,255,255,0.08)';}
-  if(box){box.style.background='rgba(22,22,31,0.98)';box.style.backdropFilter='none';box.style.boxShadow='0 20px 60px rgba(0,0,0,0.5)';}
-  return function(){
-    if(tools)tools.style.display=prev.tools;
-    if(close)close.style.display=prev.close;
-    if(del)del.style.display=prev.del;
-    if(notes){notes.style.background=prev.notesBg;notes.style.borderColor=prev.notesBorder;}
-    if(box){box.style.background=prev.bg;box.style.backdropFilter=prev.backdrop;box.style.boxShadow=prev.boxShadow;}
-  };
+function buildProfileCaptureNode(){
+  const src=document.querySelector('#profileOverlay .modal-box');
+  if(!src)return null;
+  const rect=src.getBoundingClientRect();
+  const wrap=document.createElement('div');
+  wrap.style.cssText='position:fixed;left:-99999px;top:0;padding:26px;background:transparent;z-index:-1;overflow:visible;';
+
+  const clone=src.cloneNode(true);
+  clone.style.transform='none';
+  clone.style.maxHeight='none';
+  clone.style.overflow='visible';
+  clone.style.width=Math.ceil(rect.width)+'px';
+  clone.style.margin='0';
+  clone.style.background='rgba(22,22,31,0.98)';
+  clone.style.backdropFilter='none';
+  clone.style.webkitBackdropFilter='none';
+  clone.style.boxShadow='0 20px 60px rgba(0,0,0,0.5)';
+
+  const tools=clone.querySelector('.pfp-tools');
+  const close=clone.querySelector('.close-btn');
+  const del=clone.querySelector('#delBtn');
+  const notes=clone.querySelector('#notesArea');
+  if(tools)tools.remove();
+  if(close)close.remove();
+  if(del)del.remove();
+  if(notes){
+    notes.style.background='rgba(255,255,255,0.04)';
+    notes.style.borderColor='rgba(255,255,255,0.08)';
+    notes.style.height='auto';
+    notes.style.overflow='visible';
+  }
+  const top=clone.querySelector('.modal-top');
+  if(top){
+    top.style.paddingTop='34px';
+    top.style.overflow='visible';
+  }
+  const pfpWrap=clone.querySelector('.modal-pfp-wrap');
+  if(pfpWrap){
+    pfpWrap.style.marginTop='6px';
+    pfpWrap.style.overflow='visible';
+  }
+
+  wrap.appendChild(clone);
+  document.body.appendChild(wrap);
+  return {wrap,clone};
 }
 
 function renderProfileCapture(cb){
-  const box=document.querySelector('#profileOverlay .modal-box');
-  if(!box){toast('Open a profile first');return;}
-  const restore=prepProfileCapture();
-  html2canvas(box,{backgroundColor:null,scale:2,useCORS:true,allowTaint:true,logging:false}).then(canvas=>{
-    restore();
+  const built=buildProfileCaptureNode();
+  if(!built){toast('Open a profile first');return;}
+  const {wrap,clone}=built;
+  const scale=Math.min(2, Math.max(1, window.devicePixelRatio||1));
+  html2canvas(clone,{backgroundColor:null,scale,useCORS:true,allowTaint:true,logging:false,windowWidth:clone.scrollWidth+80,windowHeight:clone.scrollHeight+80}).then(canvas=>{
+    document.body.removeChild(wrap);
     cb(canvas);
   }).catch(err=>{
-    restore();
     console.error(err);
+    if(document.body.contains(wrap))document.body.removeChild(wrap);
     toast('Capture failed');
   });
 }
