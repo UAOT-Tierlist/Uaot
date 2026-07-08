@@ -1227,6 +1227,7 @@ const GH_API = 'https://api.github.com/repos/'+GH_OWNER+'/'+GH_REPO+'/contents/'
 const GH_RAW = 'https://raw.githubusercontent.com/'+GH_OWNER+'/'+GH_REPO+'/'+GH_BRANCH+'/'+GH_FILE;
 let savePending = null;
 let fileSha = '';
+let lastSaveTime = 0; // tracks when data was last modified locally by admin
 let ghToken = sessionStorage.getItem('gh_token') || '';
 admin = localStorage.getItem('tl_admin') === '1' && !!ghToken;
 if(!ghToken)localStorage.setItem('tl_admin','0');
@@ -1253,6 +1254,7 @@ function migrate(arr){
 function save(){
   if(currentTab==='auto')drawAuto();
   if(!admin||!ghToken)return;
+  lastSaveTime=Date.now();
   if(savePending)clearTimeout(savePending);
   savePending=setTimeout(ghPush,800);
 }
@@ -1278,11 +1280,20 @@ function ghPush(){
     body:JSON.stringify(body)
   }).then(r=>{
     if(!r.ok)return r.json().then(j=>{console.error('GH save error:',j);toast('Save failed: '+(j.message||r.status));});
-    return r.json().then(j=>{fileSha=j.content.sha;toast('Synced');});
+    return r.json().then(j=>{fileSha=j.content.sha;lastPushTime=Date.now();toast('Synced');});
   }).catch(err=>{console.error(err);toast('Save failed: network error');});
 }
 
 function ghPull(){
+  // If admin made changes in the last 5 min, don't pull — their local data is the truth
+  if(admin&&lastSaveTime&&(Date.now()-lastSaveTime<300000)){
+    // Still grab the SHA so future pushes work, but don't touch data
+    if(ghToken){
+      return fetch(GH_API+'?ref='+GH_BRANCH,{headers:{'Authorization':'Bearer '+ghToken,'Accept':'application/vnd.github+json'}})
+        .then(r=>r.json()).then(j=>{if(j.sha)fileSha=j.sha;}).catch(()=>{});
+    }
+    return Promise.resolve();
+  }
   // Try raw CDN first, then fall back to GitHub API
   return fetchDataRaw()
     .then(d=>{
@@ -1339,8 +1350,11 @@ function load(){
   ghPull().then(()=>{draw();}).catch(()=>{draw();});
 }
 
-// Viewers auto-refresh from GitHub every 60s
+// Viewers auto-refresh from GitHub every 60s (skip if admin — they have the freshest data)
+let lastPushTime=0;
 setInterval(()=>{
+  if(admin)return; // admin is the source of truth, don't overwrite their edits
+  if(Date.now()-lastPushTime<120000)return; // skip refresh for 2min after any push (CDN cache lag)
   const prev=JSON.stringify(data);
   ghPull().then(()=>{
     if(JSON.stringify(data)!==prev)draw();
