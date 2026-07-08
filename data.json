@@ -313,8 +313,8 @@
       "chainkill": "S",
       "front_kill": "A",
       "consistency": "A",
-      "orbit": "B",
-      "grappling": "B",
+      "orbit": "S",
+      "grappling": "S",
       "pathing": "C"
     },
     "missions": {},
