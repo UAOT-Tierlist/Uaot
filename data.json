@@ -10,7 +10,8 @@
       "front_kill": "S",
       "orbit": "A",
       "grappling": "S",
-      "consistency": "A"
+      "consistency": "A",
+      "pathing": "C"
     },
     "notes": "",
     "tags": [],
@@ -30,7 +31,8 @@
       "front_kill": "S",
       "orbit": "S",
       "grappling": "S",
-      "consistency": "S"
+      "consistency": "S",
+      "pathing": "C"
     },
     "notes": "Near perfect",
     "tags": [
@@ -56,7 +58,8 @@
       "front_kill": "A",
       "orbit": "B",
       "grappling": "A",
-      "consistency": "B"
+      "consistency": "B",
+      "pathing": "C"
     },
     "notes": "Tied With Womp. Could be better",
     "tags": [
@@ -78,7 +81,8 @@
       "front_kill": "S",
       "orbit": "S",
       "grappling": "S",
-      "consistency": "S"
+      "consistency": "S",
+      "pathing": "C"
     },
     "notes": "",
     "tags": [
@@ -101,7 +105,8 @@
       "front_kill": "S",
       "orbit": "S",
       "grappling": "S",
-      "consistency": "S"
+      "consistency": "S",
+      "pathing": "B"
     },
     "notes": "Inconsistent",
     "tags": [
@@ -123,7 +128,8 @@
       "front_kill": "B",
       "orbit": "C",
       "grappling": "B",
-      "consistency": "B"
+      "consistency": "B",
+      "pathing": "C"
     },
     "notes": "Tied With Womp. Could be better",
     "tags": [],
@@ -146,7 +152,8 @@
       "front_kill": "S",
       "orbit": "A",
       "grappling": "S",
-      "consistency": "A"
+      "consistency": "A",
+      "pathing": "C"
     },
     "notes": "",
     "tags": [
@@ -168,7 +175,8 @@
       "front_kill": "S",
       "orbit": "B",
       "grappling": "S",
-      "consistency": "A"
+      "consistency": "A",
+      "pathing": "C"
     },
     "notes": "S tier soon.",
     "tags": [],
@@ -188,7 +196,8 @@
       "front_kill": "A",
       "orbit": "B",
       "grappling": "A",
-      "consistency": "B"
+      "consistency": "B",
+      "pathing": "C"
     },
     "missions": {},
     "notes": "",
@@ -206,7 +215,8 @@
       "front_kill": "D",
       "orbit": "C",
       "grappling": "B",
-      "consistency": "D"
+      "consistency": "D",
+      "pathing": "C"
     },
     "notes": "",
     "tags": [],
@@ -224,7 +234,8 @@
       "front_kill": "B",
       "orbit": "C",
       "grappling": "C",
-      "consistency": "D"
+      "consistency": "D",
+      "pathing": "C"
     },
     "notes": "",
     "tags": [
@@ -246,7 +257,8 @@
       "front_kill": "D",
       "orbit": "C",
       "grappling": "D",
-      "consistency": "F"
+      "consistency": "F",
+      "pathing": "C"
     },
     "notes": "",
     "tags": [],
@@ -264,7 +276,8 @@
       "front_kill": "C",
       "orbit": "C",
       "grappling": "C",
-      "consistency": "C"
+      "consistency": "C",
+      "pathing": "C"
     },
     "notes": "",
     "tags": [],
@@ -282,7 +295,8 @@
       "front_kill": "C",
       "orbit": "B",
       "grappling": "C",
-      "consistency": "B"
+      "consistency": "B",
+      "pathing": "C"
     },
     "notes": "",
     "tags": [],
@@ -300,7 +314,8 @@
       "front_kill": "A",
       "consistency": "E",
       "orbit": "B",
-      "grappling": "B"
+      "grappling": "B",
+      "pathing": "C"
     },
     "missions": {},
     "notes": "",
