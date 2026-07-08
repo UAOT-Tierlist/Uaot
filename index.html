@@ -796,6 +796,121 @@
 
   .hidden { display: none !important; }
 
+  /* ── Requests Tab ── */
+  .req-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+  .req-title { font-family:'Bebas Neue',sans-serif; font-size:1.2rem; color:var(--text-bright); letter-spacing:2px; }
+  .req-count { font-family:'Rajdhani',sans-serif; font-size:0.72rem; color:var(--text-dim); letter-spacing:1px; }
+  .req-new-btn {
+    padding:8px 18px; border:none; border-radius:8px;
+    background:linear-gradient(135deg, var(--accent), var(--accent-crimson));
+    color:#fff; font-family:'Rajdhani',sans-serif; font-size:0.85rem;
+    font-weight:700; letter-spacing:1px; text-transform:uppercase;
+    cursor:pointer; transition:all 0.2s; box-shadow:0 3px 12px rgba(194,54,22,0.25);
+  }
+  .req-new-btn:hover { transform:translateY(-1px); box-shadow:0 5px 18px rgba(194,54,22,0.4); }
+
+  .req-list { display:flex; flex-direction:column; gap:10px; }
+  .req-empty { text-align:center; padding:40px 20px; color:var(--text-dim); font-size:0.82rem; font-style:italic; }
+
+  .req-card {
+    background:var(--glass-bg); backdrop-filter:blur(16px);
+    border-radius:12px; padding:16px 20px;
+    box-shadow:0 2px 12px rgba(0,0,0,0.25), inset 0 1px 0 var(--glass-border);
+    border:1px solid rgba(255,255,255,0.04); transition:all 0.2s;
+  }
+  .req-card:hover { box-shadow:0 4px 20px rgba(0,0,0,0.35); }
+  .req-card-top { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+  .req-card-user {
+    font-family:'Rajdhani',sans-serif; font-size:1rem; font-weight:700;
+    color:var(--text-bright); letter-spacing:0.5px; text-transform:uppercase;
+  }
+  .req-card-time { font-size:0.65rem; color:var(--text-dim); margin-left:auto; font-family:'Rajdhani',sans-serif; letter-spacing:0.5px; }
+
+  .req-status {
+    display:inline-block; padding:2px 10px; border-radius:12px;
+    font-family:'Rajdhani',sans-serif; font-size:0.65rem; font-weight:700;
+    letter-spacing:1px; text-transform:uppercase;
+  }
+  .req-status.open { background:rgba(245,166,35,0.15); color:#f5a623; border:1px solid rgba(245,166,35,0.3); }
+  .req-status.accepted { background:rgba(39,174,96,0.15); color:#27ae60; border:1px solid rgba(39,174,96,0.3); }
+  .req-status.denied { background:rgba(194,54,22,0.15); color:#e84118; border:1px solid rgba(194,54,22,0.3); }
+  .req-status.closed { background:rgba(255,255,255,0.05); color:var(--text-dim); border:1px solid rgba(255,255,255,0.08); }
+
+  .req-card-reason {
+    font-size:0.82rem; color:var(--text-mid); line-height:1.5; margin-bottom:8px;
+    padding:8px 12px; background:rgba(255,255,255,0.02); border-radius:8px;
+    border:1px solid rgba(255,255,255,0.03);
+  }
+  .req-card-proof { margin-bottom:10px; }
+  .req-card-proof a {
+    font-family:'Rajdhani',sans-serif; font-size:0.75rem; color:var(--accent2);
+    text-decoration:none; letter-spacing:0.5px; word-break:break-all;
+  }
+  .req-card-proof a:hover { text-decoration:underline; }
+  .req-card-proof-label {
+    font-family:'Rajdhani',sans-serif; font-size:0.65rem; color:var(--text-dim);
+    text-transform:uppercase; letter-spacing:1px; margin-bottom:2px;
+  }
+
+  .req-card-tier {
+    display:inline-block; padding:2px 12px; border-radius:5px;
+    font-family:'Rajdhani',sans-serif; font-size:0.7rem; font-weight:700;
+    color:#fff; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;
+  }
+
+  .req-actions { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.04); }
+  .req-act-btn {
+    padding:6px 14px; border:none; border-radius:6px;
+    font-family:'Rajdhani',sans-serif; font-size:0.72rem; font-weight:700;
+    letter-spacing:1px; text-transform:uppercase; cursor:pointer; transition:all 0.2s;
+  }
+  .req-act-btn:hover { transform:scale(1.04); }
+  .req-act-btn.accept { background:linear-gradient(135deg,#27ae60,#1e8449); color:#fff; }
+  .req-act-btn.deny { background:linear-gradient(135deg,#c23616,#8B0000); color:#fff; }
+  .req-act-btn.close-req { background:rgba(255,255,255,0.06); color:var(--text-mid); }
+
+  .req-admin-note {
+    margin-top:8px; padding:6px 10px; background:rgba(255,255,255,0.02);
+    border-radius:6px; border:1px solid rgba(255,255,255,0.04);
+    font-size:0.75rem; color:var(--text-dim); font-style:italic;
+  }
+
+  .req-filter-bar { display:flex; gap:6px; margin-bottom:14px; flex-wrap:wrap; }
+  .req-filter-btn {
+    padding:5px 12px; border:1px solid rgba(255,255,255,0.06); border-radius:16px;
+    background:rgba(255,255,255,0.02); font-family:'Rajdhani',sans-serif;
+    font-size:0.7rem; font-weight:600; color:var(--text-dim);
+    letter-spacing:0.5px; text-transform:uppercase; cursor:pointer; transition:all 0.2s;
+  }
+  .req-filter-btn:hover { background:rgba(255,255,255,0.05); color:var(--text-mid); }
+  .req-filter-btn.active { background:rgba(194,54,22,0.12); color:var(--text-bright); border-color:rgba(194,54,22,0.3); }
+
+  .req-form-group { margin-bottom:14px; }
+  .req-form-label {
+    font-family:'Rajdhani',sans-serif; font-size:0.72rem; font-weight:700;
+    color:var(--text-dim); text-transform:uppercase; letter-spacing:1.5px;
+    margin-bottom:6px; display:block;
+  }
+  .req-form-input {
+    width:100%; padding:10px 14px; border:1px solid rgba(255,255,255,0.06);
+    border-radius:8px; background:rgba(255,255,255,0.03);
+    font-family:'Inter',sans-serif; font-size:0.85rem; color:var(--text-bright); outline:none;
+    transition:all 0.2s;
+  }
+  .req-form-input:focus { border-color:var(--accent); box-shadow:0 0 0 2px rgba(194,54,22,0.12); background:rgba(255,255,255,0.05); }
+  .req-form-input::placeholder { color:var(--text-dim); }
+  textarea.req-form-input { resize:none; min-height:80px; font-family:'Inter',sans-serif; line-height:1.5; }
+  select.req-form-input { cursor:pointer; appearance:none; -webkit-appearance:none; }
+
+  .req-form-hint { font-size:0.65rem; color:var(--text-dim); margin-top:4px; }
+
+  .req-badge-dot {
+    display:inline-block; width:8px; height:8px; border-radius:50%;
+    background:var(--accent-gold); margin-left:6px; vertical-align:middle;
+    animation:reqPulse 2s ease infinite;
+  }
+  @keyframes reqPulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
   @media (max-width: 600px) {
     .header h1 { font-size: 2.4rem; letter-spacing: 4px; }
     .add-box { padding: 14px; }
@@ -904,6 +1019,7 @@
   <div class="tab-bar">
     <button class="tab-btn active" onclick="switchTab('manual')">Manual</button>
     <button class="tab-btn" onclick="switchTab('auto')">Auto Rank</button>
+    <button class="tab-btn" onclick="switchTab('requests')">Requests<span class="req-badge-dot hidden" id="reqBadge"></span></button>
   </div>
 
   <div class="tab-content active" id="tabManual">
@@ -966,6 +1082,58 @@
     </div>
   </div>
 
+  <!-- Requests Tab -->
+  <div class="tab-content" id="tabRequests">
+    <div class="req-header">
+      <div>
+        <span class="req-title">Tier Requests</span>
+        <span class="req-count" id="reqCount"></span>
+      </div>
+      <button class="req-new-btn" onclick="openRequestForm()">+ Request</button>
+    </div>
+    <div class="req-filter-bar" id="reqFilterBar">
+      <button class="req-filter-btn active" onclick="filterRequests('all')">All</button>
+      <button class="req-filter-btn" onclick="filterRequests('open')">Open</button>
+      <button class="req-filter-btn" onclick="filterRequests('accepted')">Accepted</button>
+      <button class="req-filter-btn" onclick="filterRequests('denied')">Denied</button>
+      <button class="req-filter-btn" onclick="filterRequests('closed')">Closed</button>
+    </div>
+    <div class="req-list" id="reqList"></div>
+  </div>
+
+</div>
+
+<!-- Request Form Modal -->
+<div class="overlay" id="reqFormOverlay" onclick="closeReqForm(event)">
+  <div class="modal-box" onclick="event.stopPropagation()" style="max-width:420px;">
+    <div class="modal-top" style="padding:24px 22px 14px;">
+      <button class="close-btn" onclick="closeReqFormForce()">X</button>
+      <div class="modal-title" style="font-size:1.3rem;">Submit Request</div>
+    </div>
+    <div class="modal-content" style="padding:12px 22px 22px;">
+      <div class="req-form-group">
+        <label class="req-form-label">Your Username</label>
+        <input type="text" class="req-form-input" id="reqUsername" placeholder="Your in-game name" maxlength="28">
+      </div>
+      <div class="req-form-group">
+        <label class="req-form-label">Reason for Request</label>
+        <input type="text" class="req-form-input" id="reqType" placeholder="e.g. Change stats, Move tier, Add me, etc." maxlength="80">
+        <div class="req-form-hint">Brief summary of what you're requesting</div>
+      </div>
+      <div class="req-form-group">
+        <label class="req-form-label">Reason</label>
+        <textarea class="req-form-input" id="reqReason" placeholder="Why do you think you deserve this tier?" rows="3" maxlength="500"></textarea>
+        <div class="req-form-hint">Be specific about your skills and achievements</div>
+      </div>
+      <div class="req-form-group">
+        <label class="req-form-label">Proof (optional)</label>
+        <input type="text" class="req-form-input" id="reqProof" placeholder="Link to video, screenshot, etc.">
+        <div class="req-form-hint">YouTube, Discord image link, etc.</div>
+      </div>
+      <div id="reqFormErr" class="hidden" style="color:#e84118; font-size:0.78rem; text-align:center; font-family:'Rajdhani',sans-serif; font-weight:600; margin-bottom:10px;">Please fill in all required fields</div>
+      <button class="add-btn" style="width:100%;" onclick="submitRequest()">Submit Request</button>
+    </div>
+  </div>
 </div>
 
 <div class="action-bar" id="actionBar">
@@ -1186,16 +1354,36 @@ function tryLogin(){
   const p=document.getElementById('passIn').value;
   const t=document.getElementById('tokenIn').value.trim();
   if(u===ADMIN_USER&&p===ADMIN_PASS&&t){
-    admin=true;
-    ghToken=t;
-    sessionStorage.setItem('gh_token',ghToken);
-    localStorage.setItem('tl_admin','1');
-    if(prefs.remember){localStorage.setItem('tl_creds',JSON.stringify({u,p,t}));}
-    closeLoginForce();
-    updateUI();
-    ghPull().then(()=>{draw();});
-    toast('Logged in');
+    // Verify the token belongs to the repo owner
+    document.getElementById('loginErr').textContent='Verifying token...';
+    document.getElementById('loginErr').style.color='var(--text-mid)';
+    document.getElementById('loginErr').classList.remove('hidden');
+    fetch('https://api.github.com/user',{headers:{'Authorization':'Bearer '+t,'Accept':'application/vnd.github+json'}})
+      .then(r=>{if(!r.ok)throw new Error('Invalid token');return r.json();})
+      .then(userData=>{
+        if(userData.login&&userData.login.toLowerCase()===GH_OWNER.toLowerCase()){
+          admin=true;
+          ghToken=t;
+          sessionStorage.setItem('gh_token',ghToken);
+          localStorage.setItem('tl_admin','1');
+          if(prefs.remember){localStorage.setItem('tl_creds',JSON.stringify({u,p,t}));}
+          closeLoginForce();
+          updateUI();
+          ghPull().then(()=>{draw();});
+          loadRequests();
+          toast('Logged in as '+userData.login);
+        }else{
+          document.getElementById('loginErr').textContent='Token does not belong to the repo owner ('+GH_OWNER+')';
+          document.getElementById('loginErr').style.color='#e84118';
+        }
+      })
+      .catch(()=>{
+        document.getElementById('loginErr').textContent='Invalid token or network error';
+        document.getElementById('loginErr').style.color='#e84118';
+      });
   }else{
+    document.getElementById('loginErr').textContent='Wrong credentials or missing token';
+    document.getElementById('loginErr').style.color='#e84118';
     document.getElementById('loginErr').classList.remove('hidden');
   }
 }
@@ -1209,11 +1397,275 @@ let currentTab='manual';
 
 function switchTab(tab){
   currentTab=tab;
-  document.querySelectorAll('.tab-btn').forEach((b,i)=>{b.classList.toggle('active',i===(tab==='manual'?0:1));});
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{
+    const tabMap=['manual','auto','requests'];
+    b.classList.toggle('active',tabMap[i]===tab);
+  });
   document.getElementById('tabManual').classList.toggle('active',tab==='manual');
   document.getElementById('tabAuto').classList.toggle('active',tab==='auto');
+  document.getElementById('tabRequests').classList.toggle('active',tab==='requests');
   if(tab==='auto')drawAuto();
+  if(tab==='requests')drawRequests();
 }
+
+// ── Requests System ──
+const GH_REQ_FILE='requests.json';
+const GH_REQ_API='https://api.github.com/repos/'+GH_OWNER+'/'+GH_REPO+'/contents/'+GH_REQ_FILE;
+const GH_REQ_RAW='https://raw.githubusercontent.com/'+GH_OWNER+'/'+GH_REPO+'/'+GH_BRANCH+'/'+GH_REQ_FILE;
+let requests=[];
+let reqSha='';
+let reqFilter='all';
+
+function loadRequests(){
+  fetch(GH_REQ_RAW+'?t='+Date.now())
+    .then(r=>{if(!r.ok)throw new Error(r.status);return r.json();})
+    .then(d=>{if(Array.isArray(d)){requests=d;localStorage.setItem('tl_requests',JSON.stringify(requests));}})
+    .catch(()=>{
+      const local=localStorage.getItem('tl_requests');
+      if(local)try{requests=JSON.parse(local);}catch(e){requests=[];}
+    })
+    .finally(()=>{updateReqBadge();if(currentTab==='requests')drawRequests();});
+  // get sha for writing
+  if(ghToken){
+    fetch(GH_REQ_API+'?ref='+GH_BRANCH,{headers:{'Authorization':'Bearer '+ghToken,'Accept':'application/vnd.github+json'}})
+      .then(r=>r.json()).then(j=>{if(j.sha)reqSha=j.sha;}).catch(()=>{});
+  }
+}
+
+function saveRequests(){
+  localStorage.setItem('tl_requests',JSON.stringify(requests));
+  updateReqBadge();
+  if(!admin||!ghToken)return;
+  const content=btoa(unescape(encodeURIComponent(JSON.stringify(requests,null,2))));
+  const body={message:'Update requests',content:content,branch:GH_BRANCH};
+  if(reqSha)body.sha=reqSha;
+  else{
+    fetch(GH_REQ_API+'?ref='+GH_BRANCH,{headers:{'Authorization':'Bearer '+ghToken,'Accept':'application/vnd.github+json'}})
+      .then(r=>r.json()).then(j=>{
+        if(j.sha){reqSha=j.sha;saveRequests();}
+        else{
+          // file doesn't exist yet, create it
+          fetch(GH_REQ_API,{
+            method:'PUT',
+            headers:{'Authorization':'Bearer '+ghToken,'Content-Type':'application/json','Accept':'application/vnd.github+json'},
+            body:JSON.stringify({message:'Create requests.json',content:content,branch:GH_BRANCH})
+          }).then(r=>r.json()).then(j=>{if(j.content)reqSha=j.content.sha;toast('Requests synced');}).catch(()=>toast('Failed to create requests file'));
+        }
+      }).catch(()=>toast('Failed to reach GitHub'));
+    return;
+  }
+  fetch(GH_REQ_API,{
+    method:'PUT',
+    headers:{'Authorization':'Bearer '+ghToken,'Content-Type':'application/json','Accept':'application/vnd.github+json'},
+    body:JSON.stringify(body)
+  }).then(r=>{
+    if(!r.ok)return r.json().then(j=>{toast('Save failed: '+(j.message||r.status));});
+    return r.json().then(j=>{reqSha=j.content.sha;toast('Requests synced');});
+  }).catch(()=>toast('Save failed'));
+}
+
+function updateReqBadge(){
+  const openCount=requests.filter(r=>r.status==='open').length;
+  const badge=document.getElementById('reqBadge');
+  if(badge){
+    if(openCount>0){badge.classList.remove('hidden');}
+    else{badge.classList.add('hidden');}
+  }
+}
+
+function openRequestForm(){
+  document.getElementById('reqUsername').value='';
+  document.getElementById('reqType').value='';
+  document.getElementById('reqReason').value='';
+  document.getElementById('reqProof').value='';
+  document.getElementById('reqFormErr').classList.add('hidden');
+  document.getElementById('reqFormOverlay').classList.add('open');
+}
+function closeReqForm(ev){if(ev.target===ev.currentTarget)closeReqFormForce();}
+function closeReqFormForce(){document.getElementById('reqFormOverlay').classList.remove('open');}
+
+function submitRequest(){
+  const username=document.getElementById('reqUsername').value.trim();
+  const reqType=document.getElementById('reqType').value.trim();
+  const reason=document.getElementById('reqReason').value.trim();
+  const proof=document.getElementById('reqProof').value.trim();
+  if(!username||!reqType||!reason){
+    document.getElementById('reqFormErr').classList.remove('hidden');
+    return;
+  }
+  const req={
+    id:'r'+Date.now()+Math.random().toString(36).slice(2,6),
+    username:username,
+    requestType:reqType,
+    reason:reason,
+    proof:proof||'',
+    status:'open',
+    timestamp:Date.now(),
+    adminNote:''
+  };
+  requests.unshift(req);
+  saveRequests();
+  closeReqFormForce();
+  drawRequests();
+  toast('Request submitted!');
+}
+
+function filterRequests(f){
+  reqFilter=f;
+  document.querySelectorAll('.req-filter-btn').forEach(b=>{
+    b.classList.toggle('active',b.textContent.toLowerCase()===f||( f==='all'&&b.textContent.toLowerCase()==='all'));
+  });
+  drawRequests();
+}
+
+function handleRequest(id,action){
+  const req=requests.find(r=>r.id===id);
+  if(!req||!admin)return;
+  if(action==='accept'){
+    req.status='accepted';
+    toast('Request accepted');
+  }else if(action==='deny'){
+    req.status='denied';
+    toast('Request denied');
+  }else if(action==='close'){
+    req.status='closed';
+    toast('Request closed');
+  }
+  saveRequests();
+  drawRequests();
+}
+
+function deleteRequest(id){
+  if(!admin)return;
+  requests=requests.filter(r=>r.id!==id);
+  saveRequests();
+  drawRequests();
+  toast('Request deleted');
+}
+
+function formatTimeAgo(ts){
+  const diff=Date.now()-ts;
+  const mins=Math.floor(diff/60000);
+  if(mins<1)return 'Just now';
+  if(mins<60)return mins+'m ago';
+  const hrs=Math.floor(mins/60);
+  if(hrs<24)return hrs+'h ago';
+  const days=Math.floor(hrs/24);
+  if(days<30)return days+'d ago';
+  return new Date(ts).toLocaleDateString();
+}
+
+function drawRequests(){
+  const list=document.getElementById('reqList');
+  list.innerHTML='';
+  const filtered=reqFilter==='all'?requests:requests.filter(r=>r.status===reqFilter);
+  const openCount=requests.filter(r=>r.status==='open').length;
+  document.getElementById('reqCount').textContent=openCount>0?openCount+' open':'';
+
+  if(filtered.length===0){
+    list.innerHTML='<div class="req-empty">'+(reqFilter==='all'?'No requests yet. Be the first to submit one!':'No '+reqFilter+' requests')+'</div>';
+    return;
+  }
+
+  const tierColors={S:'linear-gradient(135deg,#c23616,#8B0000)',A:'linear-gradient(135deg,#e67e22,#b35400)',B:'linear-gradient(135deg,#7d8c3b,#4a5320)',C:'linear-gradient(135deg,#2e86ab,#1a5276)',D:'linear-gradient(135deg,#5b5ea6,#3c3f72)',E:'linear-gradient(135deg,#6b7280,#3f4652)',F:'linear-gradient(135deg,#343434,#181818)'};
+
+  filtered.forEach(req=>{
+    const card=document.createElement('div');
+    card.className='req-card';
+
+    const top=document.createElement('div');
+    top.className='req-card-top';
+    const user=document.createElement('span');
+    user.className='req-card-user';
+    user.textContent=req.username;
+    const status=document.createElement('span');
+    status.className='req-status '+req.status;
+    status.textContent=req.status;
+    const time=document.createElement('span');
+    time.className='req-card-time';
+    time.textContent=formatTimeAgo(req.timestamp);
+    top.appendChild(user);
+    top.appendChild(status);
+    top.appendChild(time);
+    card.appendChild(top);
+
+    const typeBadge=document.createElement('div');
+    typeBadge.className='req-card-tier';
+    typeBadge.textContent=req.requestType||req.requestedTier&&('Requesting: '+req.requestedTier+' Tier')||'Request';
+    typeBadge.style.background=req.requestedTier?tierColors[req.requestedTier]||'#444':'linear-gradient(135deg, var(--accent), var(--accent-crimson))';
+    card.appendChild(typeBadge);
+
+    const reason=document.createElement('div');
+    reason.className='req-card-reason';
+    reason.textContent=req.reason;
+    card.appendChild(reason);
+
+    if(req.proof){
+      const proofDiv=document.createElement('div');
+      proofDiv.className='req-card-proof';
+      const proofLabel=document.createElement('div');
+      proofLabel.className='req-card-proof-label';
+      proofLabel.textContent='Proof';
+      const proofLink=document.createElement('a');
+      proofLink.href=req.proof;
+      proofLink.target='_blank';
+      proofLink.rel='noopener';
+      proofLink.textContent=req.proof;
+      proofDiv.appendChild(proofLabel);
+      proofDiv.appendChild(proofLink);
+      card.appendChild(proofDiv);
+    }
+
+    if(req.adminNote){
+      const note=document.createElement('div');
+      note.className='req-admin-note';
+      note.textContent='Admin: '+req.adminNote;
+      card.appendChild(note);
+    }
+
+    if(admin&&req.status==='open'){
+      const actions=document.createElement('div');
+      actions.className='req-actions';
+      const acceptBtn=document.createElement('button');
+      acceptBtn.className='req-act-btn accept';
+      acceptBtn.textContent='Accept';
+      acceptBtn.onclick=()=>handleRequest(req.id,'accept');
+      const denyBtn=document.createElement('button');
+      denyBtn.className='req-act-btn deny';
+      denyBtn.textContent='Deny';
+      denyBtn.onclick=()=>handleRequest(req.id,'deny');
+      const closeBtn=document.createElement('button');
+      closeBtn.className='req-act-btn close-req';
+      closeBtn.textContent='Close';
+      closeBtn.onclick=()=>handleRequest(req.id,'close');
+      actions.appendChild(acceptBtn);
+      actions.appendChild(denyBtn);
+      actions.appendChild(closeBtn);
+      card.appendChild(actions);
+    }
+
+    if(admin&&req.status!=='open'){
+      const actions=document.createElement('div');
+      actions.className='req-actions';
+      const reopenBtn=document.createElement('button');
+      reopenBtn.className='req-act-btn close-req';
+      reopenBtn.textContent='Reopen';
+      reopenBtn.onclick=()=>{req.status='open';saveRequests();drawRequests();toast('Reopened');};
+      const delBtn=document.createElement('button');
+      delBtn.className='req-act-btn deny';
+      delBtn.textContent='Delete';
+      delBtn.onclick=()=>deleteRequest(req.id);
+      actions.appendChild(reopenBtn);
+      actions.appendChild(delBtn);
+      card.appendChild(actions);
+    }
+
+    list.appendChild(card);
+  });
+}
+
+// Auto-refresh requests every 30s
+setInterval(()=>{loadRequests();},30000);
 
 function timeToSec(str){
   if(!str)return null;
@@ -1869,6 +2321,7 @@ applyTheme();
 load();
 updateUI();
 spawnParticles();
+loadRequests();
 </script>
 
 </body>
