@@ -219,7 +219,7 @@
     "stats": {
       "control": "B",
       "chainkill": "C",
-      "front_kill": "A",
+      "front_kill": "C",
       "reverse_front_kill": "E",
       "orbit": "D",
       "grappling": "C"
