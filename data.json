@@ -82,19 +82,19 @@
     "missions": {}
   },
   {
-    "id": "e1783417078293s2xf",
-    "name": "Ali",
-    "pfp": "https://cdn.discordapp.com/avatars/1386827682301612124/452bb6e3ce6bc31165a043134a1412d9.png?size=1024",
+    "id": "e1783417179277in8z",
+    "name": "Zed/Dole",
+    "pfp": "https://cdn.discordapp.com/avatars/542609527464525824/5c0e96f18b291b00718edc7359744d5d.png?size=1024",
     "tier": "S",
     "stats": {
       "control": "A",
       "chainkill": "A",
       "front_kill": "S",
       "reverse_front_kill": "A",
-      "orbit": "A",
-      "grappling": "S"
+      "orbit": "B",
+      "grappling": "A"
     },
-    "notes": "",
+    "notes": "Inconsistent",
     "tags": [
       "hall-of-fame"
     ],
@@ -120,19 +120,19 @@
     "missions": {}
   },
   {
-    "id": "e1783417179277in8z",
-    "name": "Zed/Dole",
-    "pfp": "https://cdn.discordapp.com/avatars/542609527464525824/5c0e96f18b291b00718edc7359744d5d.png?size=1024",
+    "id": "e1783417078293s2xf",
+    "name": "Ali",
+    "pfp": "https://cdn.discordapp.com/avatars/1386827682301612124/452bb6e3ce6bc31165a043134a1412d9.png?size=1024",
     "tier": "S",
     "stats": {
       "control": "A",
       "chainkill": "A",
       "front_kill": "S",
       "reverse_front_kill": "A",
-      "orbit": "B",
-      "grappling": "A"
+      "orbit": "A",
+      "grappling": "S"
     },
-    "notes": "Inconsistent",
+    "notes": "",
     "tags": [
       "hall-of-fame"
     ],
