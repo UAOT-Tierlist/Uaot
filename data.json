@@ -222,9 +222,9 @@
       "control": "D",
       "chainkill": "C",
       "front_kill": "B",
-      "orbit": "E",
+      "orbit": "C",
       "grappling": "C",
-      "consistency": "C"
+      "consistency": "D"
     },
     "notes": "",
     "tags": [
