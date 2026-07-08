@@ -225,7 +225,9 @@
       "grappling": "C"
     },
     "notes": "",
-    "tags": [],
+    "tags": [
+      "hall-of-fame"
+    ],
     "gallery": [],
     "missions": {}
   },
