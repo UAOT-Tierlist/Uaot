@@ -9,14 +9,14 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  :root {
+  :root, [data-theme="aot"] {
     --bg-deep: #0a0a0f;
     --bg-dark: #111118;
     --bg-card: #16161f;
     --bg-surface: #1c1c28;
     --bg-elevated: #22222f;
-    --accent-red: #c23616;
-    --accent-ember: #e84118;
+    --accent: #c23616;
+    --accent2: #e84118;
     --accent-orange: #e67e22;
     --accent-gold: #f5a623;
     --accent-crimson: #8B0000;
@@ -25,8 +25,104 @@
     --text-dim: #555;
     --glass-bg: rgba(18, 18, 26, 0.75);
     --glass-border: rgba(255,255,255,0.06);
-    --glow-red: rgba(194, 54, 22, 0.3);
-    --glow-ember: rgba(232, 65, 24, 0.15);
+    --glow: rgba(194, 54, 22, 0.3);
+    --glow2: rgba(232, 65, 24, 0.15);
+    --particle-color: #e84118;
+    --particle-glow: rgba(232,65,24,0.4);
+    --tier-s1:#c23616;--tier-s2:#8B0000;
+    --tier-a1:#e67e22;--tier-a2:#b35400;
+    --tier-b1:#7d8c3b;--tier-b2:#4a5320;
+    --tier-c1:#2e86ab;--tier-c2:#1a5276;
+    --tier-d1:#5b5ea6;--tier-d2:#3c3f72;
+    --tier-e1:#6b7280;--tier-e2:#3f4652;
+    --tier-f1:#343434;--tier-f2:#181818;
+  }
+
+  [data-theme="cat"] {
+    --bg-deep: #fdf6f0;
+    --bg-dark: #f5ece4;
+    --bg-card: #fff8f2;
+    --bg-surface: #ffeedd;
+    --bg-elevated: #ffe4cc;
+    --accent: #e8927c;
+    --accent2: #f4a68c;
+    --accent-orange: #f0b27a;
+    --accent-gold: #f7c59f;
+    --accent-crimson: #d4735e;
+    --text-bright: #4a3728;
+    --text-mid: #8b7260;
+    --text-dim: #c4a98e;
+    --glass-bg: rgba(255, 248, 242, 0.8);
+    --glass-border: rgba(0,0,0,0.05);
+    --glow: rgba(232, 146, 124, 0.2);
+    --glow2: rgba(244, 166, 140, 0.1);
+    --particle-color: #f4a68c;
+    --particle-glow: rgba(244,166,140,0.3);
+    --tier-s1:#e8927c;--tier-s2:#d4735e;
+    --tier-a1:#f0b27a;--tier-a2:#d4975a;
+    --tier-b1:#a8c686;--tier-b2:#7fa85e;
+    --tier-c1:#7ec8d8;--tier-c2:#5ba8b8;
+    --tier-d1:#b0a4ce;--tier-d2:#8878aa;
+    --tier-e1:#c4b0a0;--tier-e2:#a08878;
+    --tier-f1:#d0c4b8;--tier-f2:#b0a090;
+  }
+
+  [data-theme="anime"] {
+    --bg-deep: #0d0b1a;
+    --bg-dark: #13102a;
+    --bg-card: #1a1530;
+    --bg-surface: #221c3a;
+    --bg-elevated: #2a2244;
+    --accent: #e040fb;
+    --accent2: #7c4dff;
+    --accent-orange: #ff6090;
+    --accent-gold: #ffab40;
+    --accent-crimson: #aa00ff;
+    --text-bright: #f0eaf8;
+    --text-mid: #a094b8;
+    --text-dim: #5a4e70;
+    --glass-bg: rgba(18, 14, 36, 0.8);
+    --glass-border: rgba(255,255,255,0.06);
+    --glow: rgba(224, 64, 251, 0.25);
+    --glow2: rgba(124, 77, 255, 0.15);
+    --particle-color: #e040fb;
+    --particle-glow: rgba(224,64,251,0.4);
+    --tier-s1:#e040fb;--tier-s2:#aa00ff;
+    --tier-a1:#7c4dff;--tier-a2:#5c30cc;
+    --tier-b1:#ff6090;--tier-b2:#d44070;
+    --tier-c1:#00bcd4;--tier-c2:#008ba0;
+    --tier-d1:#ffab40;--tier-d2:#d08020;
+    --tier-e1:#78909c;--tier-e2:#546e7a;
+    --tier-f1:#37474f;--tier-f2:#263238;
+  }
+
+  [data-theme="midnight"] {
+    --bg-deep: #060612;
+    --bg-dark: #0a0a1a;
+    --bg-card: #0f0f22;
+    --bg-surface: #14142c;
+    --bg-elevated: #1a1a36;
+    --accent: #4fc3f7;
+    --accent2: #0288d1;
+    --accent-orange: #26c6da;
+    --accent-gold: #80deea;
+    --accent-crimson: #01579b;
+    --text-bright: #e0e8f0;
+    --text-mid: #7088a0;
+    --text-dim: #384858;
+    --glass-bg: rgba(10, 10, 26, 0.8);
+    --glass-border: rgba(255,255,255,0.04);
+    --glow: rgba(79, 195, 247, 0.2);
+    --glow2: rgba(2, 136, 209, 0.1);
+    --particle-color: #4fc3f7;
+    --particle-glow: rgba(79,195,247,0.3);
+    --tier-s1:#4fc3f7;--tier-s2:#0288d1;
+    --tier-a1:#26c6da;--tier-a2:#00838f;
+    --tier-b1:#66bb6a;--tier-b2:#388e3c;
+    --tier-c1:#ab47bc;--tier-c2:#7b1fa2;
+    --tier-d1:#5c6bc0;--tier-d2:#303f9f;
+    --tier-e1:#546e7a;--tier-e2:#37474f;
+    --tier-f1:#2a2a3a;--tier-f2:#16162a;
   }
 
   body {
@@ -42,9 +138,9 @@
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     background:
-      radial-gradient(ellipse at 20% 0%, rgba(194,54,22,0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 100%, rgba(139,0,0,0.06) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 50%, rgba(18,18,26,1) 0%, var(--bg-deep) 100%);
+      radial-gradient(ellipse at 20% 0%, var(--glow) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, var(--glow2) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, var(--bg-dark) 0%, var(--bg-deep) 100%);
     pointer-events: none;
     z-index: 0;
   }
@@ -56,8 +152,8 @@
 
   .ember {
     position: absolute; width: 3px; height: 3px; border-radius: 50%;
-    background: var(--accent-ember);
-    box-shadow: 0 0 6px 2px rgba(232,65,24,0.4);
+    background: var(--particle-color);
+    box-shadow: 0 0 6px 2px var(--particle-glow);
     animation: emberRise linear infinite; opacity: 0;
   }
 
@@ -103,7 +199,7 @@
     border: 1px solid rgba(255,255,255,0.05);
   }
   .status-pill.is-admin {
-    color: var(--accent-ember); background: rgba(194,54,22,0.12); border-color: rgba(194,54,22,0.3);
+    color: var(--accent2); background: rgba(194,54,22,0.12); border-color: rgba(194,54,22,0.3);
   }
   .login-btn {
     padding: 6px 14px; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px;
@@ -112,7 +208,7 @@
     letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
   }
   .login-btn:hover { background: rgba(255,255,255,0.08); color: var(--text-bright); }
-  .login-btn.is-admin { border-color: rgba(194,54,22,0.3); color: var(--accent-ember); }
+  .login-btn.is-admin { border-color: rgba(194,54,22,0.3); color: var(--accent2); }
   .login-btn.is-admin:hover { background: rgba(194,54,22,0.15); }
 
   .header { text-align: center; padding: 30px 20px 20px; margin-bottom: 24px; }
@@ -128,7 +224,7 @@
 
   .header h1::after {
     content: ''; position: absolute; bottom: -4px; left: 10%; width: 80%; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent-red), var(--accent-ember), var(--accent-red), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), var(--accent), transparent);
   }
 
   .header .sub {
@@ -156,7 +252,7 @@
     font-size: 0.85rem; color: var(--text-bright); outline: none; transition: all 0.2s;
   }
   .add-box input[type="text"]:focus {
-    border-color: var(--accent-red); box-shadow: 0 0 0 2px rgba(194,54,22,0.12);
+    border-color: var(--accent); box-shadow: 0 0 0 2px rgba(194,54,22,0.12);
     background: rgba(255,255,255,0.05);
   }
   .add-box input[type="text"]::placeholder { color: var(--text-dim); }
@@ -203,13 +299,13 @@
 
   .empty-msg { color: var(--text-dim); font-size: 0.75rem; font-style: italic; padding: 6px; opacity: 0.6; }
 
-  .tier-s .tier-letter { background: linear-gradient(180deg, #c23616, #8B0000); }
-  .tier-a .tier-letter { background: linear-gradient(180deg, #e67e22, #b35400); }
-  .tier-b .tier-letter { background: linear-gradient(180deg, #7d8c3b, #4a5320); }
-  .tier-c .tier-letter { background: linear-gradient(180deg, #2e86ab, #1a5276); }
-  .tier-d .tier-letter { background: linear-gradient(180deg, #5b5ea6, #3c3f72); }
-  .tier-e .tier-letter { background: linear-gradient(180deg, #6b7280, #3f4652); }
-  .tier-f .tier-letter { background: linear-gradient(180deg, #343434, #181818); }
+  .tier-s .tier-letter { background: linear-gradient(180deg, var(--tier-s1), var(--tier-s2)); }
+  .tier-a .tier-letter { background: linear-gradient(180deg, var(--tier-a1), var(--tier-a2)); }
+  .tier-b .tier-letter { background: linear-gradient(180deg, var(--tier-b1), var(--tier-b2)); }
+  .tier-c .tier-letter { background: linear-gradient(180deg, var(--tier-c1), var(--tier-c2)); }
+  .tier-d .tier-letter { background: linear-gradient(180deg, var(--tier-d1), var(--tier-d2)); }
+  .tier-e .tier-letter { background: linear-gradient(180deg, var(--tier-e1), var(--tier-e2)); }
+  .tier-f .tier-letter { background: linear-gradient(180deg, var(--tier-f1), var(--tier-f2)); }
 
   .tier-s .tier-items { background: rgba(194,54,22,0.03); }
   .tier-a .tier-items { background: rgba(230,126,34,0.02); }
@@ -291,13 +387,13 @@
     letter-spacing: 1px; cursor: pointer; transition: all 0.2s; color: #fff;
   }
   .tier-pick:hover { transform: scale(1.08); }
-  .tier-pick.s { background: linear-gradient(135deg, #c23616, #8B0000); }
-  .tier-pick.a { background: linear-gradient(135deg, #e67e22, #b35400); }
-  .tier-pick.b { background: linear-gradient(135deg, #7d8c3b, #4a5320); }
-  .tier-pick.c { background: linear-gradient(135deg, #2e86ab, #1a5276); }
-  .tier-pick.d { background: linear-gradient(135deg, #5b5ea6, #3c3f72); }
-  .tier-pick.e { background: linear-gradient(135deg, #6b7280, #3f4652); }
-  .tier-pick.f { background: linear-gradient(135deg, #343434, #181818); }
+  .tier-pick.s { background: linear-gradient(135deg, var(--tier-s1), var(--tier-s2)); }
+  .tier-pick.a { background: linear-gradient(135deg, var(--tier-a1), var(--tier-a2)); }
+  .tier-pick.b { background: linear-gradient(135deg, var(--tier-b1), var(--tier-b2)); }
+  .tier-pick.c { background: linear-gradient(135deg, var(--tier-c1), var(--tier-c2)); }
+  .tier-pick.d { background: linear-gradient(135deg, var(--tier-d1), var(--tier-d2)); }
+  .tier-pick.e { background: linear-gradient(135deg, var(--tier-e1), var(--tier-e2)); }
+  .tier-pick.f { background: linear-gradient(135deg, var(--tier-f1), var(--tier-f2)); }
 
   .pool-pick {
     padding: 6px 12px; border: none; border-radius: 6px;
@@ -619,6 +715,85 @@
     letter-spacing: 0.5px;
   }
 
+  .settings-btn {
+    padding: 6px 12px; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px;
+    background: rgba(255,255,255,0.04); font-family: 'Rajdhani', sans-serif;
+    font-size: 0.75rem; font-weight: 600; color: var(--text-mid);
+    letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
+  }
+  .settings-btn:hover { background: rgba(255,255,255,0.08); color: var(--text-bright); }
+
+  .theme-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;
+  }
+  .theme-card {
+    padding: 12px 10px; border-radius: 10px; cursor: pointer;
+    border: 2px solid transparent; text-align: center; transition: all 0.2s;
+  }
+  .theme-card:hover { opacity: 0.85; }
+  .theme-card.active { border-color: var(--accent); }
+  .theme-card .theme-name {
+    font-family: 'Rajdhani', sans-serif; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; margin-top: 6px;
+  }
+  .theme-card .theme-dots { display: flex; gap: 4px; justify-content: center; }
+  .theme-dot { width: 14px; height: 14px; border-radius: 50%; }
+
+  .setting-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .setting-row:last-child { border-bottom: none; }
+  .setting-label {
+    font-family: 'Rajdhani', sans-serif; font-size: 0.78rem; font-weight: 600;
+    color: var(--text-mid); text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .setting-desc {
+    font-size: 0.65rem; color: var(--text-dim); margin-top: 2px;
+    text-transform: none; letter-spacing: 0;
+  }
+  .toggle {
+    width: 38px; height: 20px; border-radius: 10px; border: none;
+    background: rgba(255,255,255,0.1); position: relative; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .toggle.on { background: var(--accent); }
+  .toggle::after {
+    content: ''; position: absolute; top: 2px; left: 2px;
+    width: 16px; height: 16px; border-radius: 50%; background: #fff;
+    transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .toggle.on::after { transform: translateX(18px); }
+
+  [data-no-anim] .ember,
+  [data-no-anim] .smoke-wisp,
+  [data-no-anim] .scratch-overlay,
+  [data-no-anim] .modal-pfp-wrap::after { animation: none !important; }
+  [data-no-anim] .particles-container { display: none; }
+
+  /* Cat theme: hide scratch overlay, softer card shadows, cat ears on avatars */
+  [data-theme="cat"] .scratch-overlay { display: none; }
+  [data-theme="cat"] .card { box-shadow: 0 2px 8px rgba(180,130,100,0.12); }
+  [data-theme="cat"] .card:hover { box-shadow: 0 6px 18px rgba(180,130,100,0.18); }
+  [data-theme="cat"] .card-pfp { border: 2px solid var(--accent); }
+  [data-theme="cat"] .tier-row { box-shadow: 0 2px 10px rgba(180,130,100,0.08); }
+  [data-theme="cat"] .header h1 { background: linear-gradient(180deg, #4a3728 0%, #e8927c 100%); -webkit-background-clip:text; background-clip:text; }
+  [data-theme="cat"] .toast-msg { background: rgba(253,246,240,0.95); color: #4a3728; }
+  [data-theme="cat"] .modal-pfp-wrap::after { background: conic-gradient(#e8927c, #f4a68c, #e8927c); }
+
+  /* Anime theme: neon glow, gradient borders */
+  [data-theme="anime"] .scratch-overlay { display: none; }
+  [data-theme="anime"] .card { box-shadow: 0 2px 8px rgba(224,64,251,0.08); }
+  [data-theme="anime"] .card:hover { box-shadow: 0 4px 20px rgba(224,64,251,0.2), 0 0 12px rgba(124,77,255,0.15); }
+  [data-theme="anime"] .card.picked { box-shadow: 0 0 0 2px #e040fb, 0 4px 20px rgba(224,64,251,0.3); }
+  [data-theme="anime"] .tier-row { box-shadow: 0 2px 12px rgba(124,77,255,0.1); }
+  [data-theme="anime"] .header h1 { background: linear-gradient(180deg, #f0eaf8 0%, #e040fb 100%); -webkit-background-clip:text; background-clip:text; }
+  [data-theme="anime"] .modal-pfp-wrap::after { background: conic-gradient(#e040fb, #7c4dff, #ff6090, #e040fb); }
+
+  /* Midnight theme */
+  [data-theme="midnight"] .header h1 { background: linear-gradient(180deg, #e0e8f0 0%, #4fc3f7 100%); -webkit-background-clip:text; background-clip:text; }
+  [data-theme="midnight"] .modal-pfp-wrap::after { background: conic-gradient(#4fc3f7, #0288d1, #4fc3f7); }
+
   .hidden { display: none !important; }
 
   @media (max-width: 600px) {
@@ -668,7 +843,38 @@
           <div style="margin-top:6px; font-size:0.72rem; color:var(--text-dim); line-height:1.35;">Stored only in this browser session. Not written into the repo.</div>
         </div>
         <div id="loginErr" class="hidden" style="color:#e84118; font-size:0.78rem; text-align:center; font-family:'Rajdhani',sans-serif; font-weight:600;">Wrong credentials or missing token</div>
+        <div id="loginRememberHint" style="font-size:0.68rem; color:var(--text-dim); text-align:center; margin-top:4px;"></div>
         <button class="add-btn" style="width:100%; margin-top:4px;" onclick="tryLogin()">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Settings Modal -->
+<div class="overlay" id="settingsOverlay" onclick="closeSettings(event)">
+  <div class="modal-box" onclick="event.stopPropagation()" style="max-width:400px;">
+    <div class="modal-top" style="padding:22px 22px 12px;">
+      <button class="close-btn" onclick="closeSettingsForce()">X</button>
+      <div class="modal-title" style="font-size:1.3rem;">Settings</div>
+    </div>
+    <div class="modal-content" style="padding:10px 22px 22px;">
+      <div class="section-label">Theme</div>
+      <div class="theme-grid" id="themeGrid"></div>
+
+      <div class="section-label">Preferences</div>
+      <div class="setting-row">
+        <div>
+          <div class="setting-label">Animations</div>
+          <div class="setting-desc">Particles, ember effects, spinning borders</div>
+        </div>
+        <button class="toggle on" id="animToggle" onclick="toggleAnim()"></button>
+      </div>
+      <div class="setting-row">
+        <div>
+          <div class="setting-label">Remember Login</div>
+          <div class="setting-desc">Store credentials on this device</div>
+        </div>
+        <button class="toggle" id="rememberToggle" onclick="toggleRemember()"></button>
       </div>
     </div>
   </div>
@@ -678,6 +884,7 @@
 
   <div class="top-bar">
     <span class="status-pill" id="statusPill">Viewing</span>
+    <button class="settings-btn" onclick="openSettings()">Settings</button>
     <button class="login-btn" id="loginBtn" onclick="openLogin()">Login</button>
   </div>
 
@@ -786,8 +993,8 @@
         <img class="modal-pfp" id="modalPfp" src="" alt="">
       </div>
       <div class="pfp-tools">
-        <button class="pfp-tool-btn" onclick="copyProfileImage()">Copy Image</button>
-        <button class="pfp-tool-btn" onclick="saveProfileImage()">Save Image</button>
+        <button class="pfp-tool-btn" onclick="copyProfileCard()">Copy Profile</button>
+        <button class="pfp-tool-btn" onclick="saveProfileCard()">Save Profile</button>
       </div>
       <div class="modal-title" id="modalName"></div>
       <span class="modal-badge" id="modalBadge"></span>
@@ -957,7 +1164,16 @@ function updateUI(){
   draw();
 }
 
-function openLogin(){document.getElementById('userIn').value='';document.getElementById('passIn').value='';document.getElementById('tokenIn').value='';document.getElementById('loginErr').classList.add('hidden');document.getElementById('loginOverlay').classList.add('open');}
+function openLogin(){
+  const creds=prefs.remember?getSavedCreds():{};
+  document.getElementById('userIn').value=creds.u||'';
+  document.getElementById('passIn').value=creds.p||'';
+  document.getElementById('tokenIn').value=creds.t||'';
+  document.getElementById('loginErr').classList.add('hidden');
+  const hint=document.getElementById('loginRememberHint');
+  hint.textContent=prefs.remember?'Credentials will be remembered on this device':'Enable "Remember Login" in Settings to save credentials';
+  document.getElementById('loginOverlay').classList.add('open');
+}
 function closeLogin(e){if(e.target===e.currentTarget)closeLoginForce();}
 function closeLoginForce(){document.getElementById('loginOverlay').classList.remove('open');}
 function tryLogin(){
@@ -969,6 +1185,7 @@ function tryLogin(){
     ghToken=t;
     sessionStorage.setItem('gh_token',ghToken);
     localStorage.setItem('tl_admin','1');
+    if(prefs.remember){localStorage.setItem('tl_creds',JSON.stringify({u,p,t}));}
     closeLoginForce();
     updateUI();
     ghPull().then(()=>{draw();});
@@ -1329,36 +1546,75 @@ function closeProfileForce(){document.getElementById('profileOverlay').classList
 function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');}
 function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
 
-function getCurrentProfileImage(){
-  const img=document.getElementById('modalPfp');
-  return img&&img.src?img.src:'';
+function prepProfileCapture(){
+  const box=document.querySelector('#profileOverlay .modal-box');
+  const tools=box.querySelector('.pfp-tools');
+  const close=box.querySelector('.close-btn');
+  const del=box.querySelector('#delBtn');
+  const notes=document.getElementById('notesArea');
+  const prev={
+    tools:tools?tools.style.display:'',
+    close:close?close.style.display:'',
+    del:del?del.style.display:'',
+    notesBg:notes?notes.style.background:'',
+    notesBorder:notes?notes.style.borderColor:'',
+    boxShadow:box?box.style.boxShadow:'',
+    bg:box?box.style.background:'',
+    backdrop:box?box.style.backdropFilter:''
+  };
+  if(tools)tools.style.display='none';
+  if(close)close.style.display='none';
+  if(del)del.style.display='none';
+  if(notes){notes.style.background='rgba(255,255,255,0.04)';notes.style.borderColor='rgba(255,255,255,0.08)';}
+  if(box){box.style.background='rgba(22,22,31,0.98)';box.style.backdropFilter='none';box.style.boxShadow='0 20px 60px rgba(0,0,0,0.5)';}
+  return function(){
+    if(tools)tools.style.display=prev.tools;
+    if(close)close.style.display=prev.close;
+    if(del)del.style.display=prev.del;
+    if(notes){notes.style.background=prev.notesBg;notes.style.borderColor=prev.notesBorder;}
+    if(box){box.style.background=prev.bg;box.style.backdropFilter=prev.backdrop;box.style.boxShadow=prev.boxShadow;}
+  };
 }
 
-async function copyProfileImage(){
-  const src=getCurrentProfileImage();
-  if(!src){toast('No image');return;}
-  try{
-    const res=await fetch(src,{mode:'cors'});
-    const blob=await res.blob();
-    await navigator.clipboard.write([new ClipboardItem({[blob.type||'image/png']:blob})]);
-    toast('Image copied');
-  }catch(e){
-    console.error(e);
-    toast('Copy blocked by source');
-  }
+function renderProfileCapture(cb){
+  const box=document.querySelector('#profileOverlay .modal-box');
+  if(!box){toast('Open a profile first');return;}
+  const restore=prepProfileCapture();
+  html2canvas(box,{backgroundColor:null,scale:2,useCORS:true,allowTaint:true,logging:false}).then(canvas=>{
+    restore();
+    cb(canvas);
+  }).catch(err=>{
+    restore();
+    console.error(err);
+    toast('Capture failed');
+  });
 }
 
-function saveProfileImage(){
-  const src=getCurrentProfileImage();
-  if(!src){toast('No image');return;}
-  const a=document.createElement('a');
-  a.href=src;
-  a.download='profile-image';
-  a.target='_blank';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  toast('Download started');
+function copyProfileCard(){
+  toast('Capturing...');
+  setTimeout(()=>{
+    renderProfileCapture(canvas=>{
+      canvas.toBlob(blob=>{
+        if(!blob){toast('Copy failed');return;}
+        try{
+          navigator.clipboard.write([new ClipboardItem({'image/png':blob})]).then(()=>toast('Profile copied')).catch(()=>toast('Copy not supported here'));
+        }catch(e){toast('Copy not supported in this browser');}
+      },'image/png');
+    });
+  },100);
+}
+
+function saveProfileCard(){
+  toast('Capturing...');
+  setTimeout(()=>{
+    renderProfileCapture(canvas=>{
+      const a=document.createElement('a');
+      a.download='uaot-profile.png';
+      a.href=canvas.toDataURL('image/png');
+      document.body.appendChild(a);a.click();document.body.removeChild(a);
+      toast('Saved');
+    });
+  },100);
 }
 
 function getActiveTiers(){
@@ -1421,10 +1677,137 @@ function saveImage(){
 }
 
 function spawnParticles(){
+  if(!prefs.anim)return;
   const c=document.getElementById('particles');
-  for(let i=0;i<20;i++){const e=document.createElement('div');e.className='ember';e.style.left=Math.random()*100+'%';e.style.animationDuration=(8+Math.random()*14)+'s';e.style.animationDelay=Math.random()*18+'s';e.style.setProperty('--drift',(Math.random()*80-40)+'px');const sz=2+Math.random()*2.5;e.style.width=sz+'px';e.style.height=sz+'px';c.appendChild(e);}
+  const theme=prefs.theme||'aot';
+  const style=getComputedStyle(document.documentElement);
+  const pc=style.getPropertyValue('--particle-color').trim()||'#e84118';
+  const pg=style.getPropertyValue('--particle-glow').trim()||'rgba(232,65,24,0.4)';
+
+  if(theme==='cat'){
+    // paw prints and fish bones floating up
+    const syms=['\u{1F43E}','\u{1F3F5}','\u2727','\u2726','\u{1F41F}'];
+    for(let i=0;i<18;i++){
+      const s=document.createElement('span');
+      s.className='ember';
+      s.textContent=syms[i%syms.length];
+      s.style.cssText='position:absolute;font-size:'+(12+Math.random()*14)+'px;background:none;box-shadow:none;width:auto;height:auto;border-radius:0;opacity:0;left:'+Math.random()*100+'%;animation:emberRise '+(15+Math.random()*20)+'s linear '+(Math.random()*25)+'s infinite;';
+      s.style.setProperty('--drift',(Math.random()*80-40)+'px');
+      c.appendChild(s);
+    }
+  } else if(theme==='anime'){
+    // sparkles, stars, hearts
+    const syms=['\u2728','\u2B50','\u2606','\u2605','\u2661','\u273F'];
+    for(let i=0;i<22;i++){
+      const s=document.createElement('span');
+      s.className='ember';
+      s.textContent=syms[i%syms.length];
+      s.style.cssText='position:absolute;font-size:'+(10+Math.random()*12)+'px;background:none;box-shadow:none;width:auto;height:auto;border-radius:0;opacity:0;left:'+Math.random()*100+'%;animation:emberRise '+(12+Math.random()*18)+'s linear '+(Math.random()*20)+'s infinite;';
+      s.style.setProperty('--drift',(Math.random()*100-50)+'px');
+      c.appendChild(s);
+    }
+  } else {
+    // default ember dots for aot / midnight
+    for(let i=0;i<20;i++){const e=document.createElement('div');e.className='ember';e.style.left=Math.random()*100+'%';e.style.animationDuration=(8+Math.random()*14)+'s';e.style.animationDelay=Math.random()*18+'s';e.style.setProperty('--drift',(Math.random()*80-40)+'px');e.style.background=pc;e.style.boxShadow='0 0 6px 2px '+pg;const sz=2+Math.random()*2.5;e.style.width=sz+'px';e.style.height=sz+'px';c.appendChild(e);}
+  }
+  // smoke for all themes
   for(let i=0;i<3;i++){const s=document.createElement('div');s.className='smoke-wisp';s.style.left=(Math.random()*80+10)+'%';s.style.animationDuration=(22+Math.random()*18)+'s';s.style.animationDelay=Math.random()*12+'s';const sz=140+Math.random()*160;s.style.width=sz+'px';s.style.height=sz+'px';c.appendChild(s);}
 }
+
+// ── Settings ──
+const THEMES = [
+  {id:'aot',name:'AOT',sub:'Dedicate Your Heart',colors:['#0a0a0f','#c23616','#e84118','#e67e22']},
+  {id:'cat',name:'Neko',sub:'Nyaa~',colors:['#fdf6f0','#e8927c','#f4a68c','#a8c686']},
+  {id:'anime',name:'Anime',sub:'Plus Ultra',colors:['#0d0b1a','#e040fb','#7c4dff','#ff6090']},
+  {id:'midnight',name:'Midnight',sub:'Into the Void',colors:['#060612','#4fc3f7','#0288d1','#26c6da']}
+];
+
+let prefs = JSON.parse(localStorage.getItem('tl_prefs')||'{}');
+if(!prefs.theme) prefs.theme='aot';
+if(prefs.anim===undefined) prefs.anim=true;
+if(prefs.remember===undefined) prefs.remember=false;
+
+function savePrefs(){ localStorage.setItem('tl_prefs',JSON.stringify(prefs)); }
+
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme',prefs.theme);
+  if(!prefs.anim) document.documentElement.setAttribute('data-no-anim','');
+  else document.documentElement.removeAttribute('data-no-anim');
+  const t=THEMES.find(x=>x.id===prefs.theme);
+  const sub=document.querySelector('.header .sub');
+  if(sub&&t)sub.textContent=t.sub;
+}
+
+function openSettings(){
+  renderThemeGrid();
+  document.getElementById('animToggle').className='toggle'+(prefs.anim?' on':'');
+  document.getElementById('rememberToggle').className='toggle'+(prefs.remember?' on':'');
+  document.getElementById('settingsOverlay').classList.add('open');
+}
+function closeSettings(ev){if(ev.target===ev.currentTarget)closeSettingsForce();}
+function closeSettingsForce(){document.getElementById('settingsOverlay').classList.remove('open');}
+
+function renderThemeGrid(){
+  const grid=document.getElementById('themeGrid');grid.innerHTML='';
+  const icons={aot:'\u2694',cat:'\u{1F43E}',anime:'\u2728',midnight:'\u{1F319}'};
+  THEMES.forEach(t=>{
+    const card=document.createElement('div');
+    card.className='theme-card'+(prefs.theme===t.id?' active':'');
+    card.style.background=t.colors[0];
+    card.style.borderColor=prefs.theme===t.id?t.colors[1]:'transparent';
+    card.onclick=()=>{prefs.theme=t.id;savePrefs();applyTheme();renderThemeGrid();rebuildParticles();};
+    const icon=document.createElement('div');
+    icon.style.cssText='font-size:1.4rem;margin-bottom:2px;';
+    icon.textContent=icons[t.id]||'';
+    const dots=document.createElement('div');dots.className='theme-dots';
+    t.colors.slice(1).forEach(c=>{const d=document.createElement('div');d.className='theme-dot';d.style.background=c;dots.appendChild(d);});
+    const name=document.createElement('div');name.className='theme-name';name.textContent=t.name;
+    name.style.color=t.colors[1];
+    const sub=document.createElement('div');
+    sub.style.cssText='font-size:0.55rem;color:'+t.colors[2]+';margin-top:1px;font-family:Rajdhani,sans-serif;letter-spacing:0.5px;';
+    sub.textContent=t.sub;
+    card.appendChild(icon);card.appendChild(dots);card.appendChild(name);card.appendChild(sub);grid.appendChild(card);
+  });
+}
+
+function toggleAnim(){
+  prefs.anim=!prefs.anim;savePrefs();applyTheme();
+  document.getElementById('animToggle').className='toggle'+(prefs.anim?' on':'');
+  if(prefs.anim) rebuildParticles();
+}
+
+function toggleRemember(){
+  prefs.remember=!prefs.remember;savePrefs();
+  document.getElementById('rememberToggle').className='toggle'+(prefs.remember?' on':'');
+  if(!prefs.remember){localStorage.removeItem('tl_creds');}
+}
+
+function rebuildParticles(){
+  const c=document.getElementById('particles');c.innerHTML='';
+  if(prefs.anim)spawnParticles();
+}
+
+// ── Credential remember ──
+function getSavedCreds(){
+  try{return JSON.parse(localStorage.getItem('tl_creds'))||{};}catch(e){return {};}
+}
+
+// ── Apply settings on load ──
+applyTheme();
+
+// Auto-login from saved creds
+(function(){
+  if(!prefs.remember)return;
+  const creds=getSavedCreds();
+  if(creds.u&&creds.p&&creds.t){
+    ghToken=creds.t;
+    if(creds.u===ADMIN_USER&&creds.p===ADMIN_PASS){
+      admin=true;
+      sessionStorage.setItem('gh_token',ghToken);
+      localStorage.setItem('tl_admin','1');
+    }
+  }
+})();
 
 load();
 updateUI();
