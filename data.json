@@ -103,9 +103,9 @@
       "control": "S",
       "chainkill": "S",
       "front_kill": "S",
-      "orbit": "S",
+      "orbit": "B",
       "grappling": "S",
-      "consistency": "S",
+      "consistency": "B",
       "pathing": "B"
     },
     "notes": "Inconsistent",
