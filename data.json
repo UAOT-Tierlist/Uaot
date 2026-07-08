@@ -262,25 +262,6 @@
     "missions": {}
   },
   {
-    "id": "e1783486197578d12p",
-    "name": "AshFroaki",
-    "pfp": "https://cdn.discordapp.com/avatars/871012961018318878/648ba9205d702bf9c7418dc6ebe78e40.png?size=1024",
-    "tier": "C",
-    "stats": {
-      "control": "D",
-      "chainkill": "C",
-      "front_kill": "C",
-      "orbit": "C",
-      "grappling": "C",
-      "consistency": "C",
-      "pathing": "C"
-    },
-    "notes": "",
-    "tags": [],
-    "gallery": [],
-    "missions": {}
-  },
-  {
     "id": "e17834861725549ok7",
     "name": "LegDkGend",
     "pfp": "https://cdn.discordapp.com/avatars/1230967364183658567/cd7e87cc3ae851644fc87f2c869980bd.png?size=1024",
@@ -302,6 +283,25 @@
     "missions": {
       "forest_base": "2:41"
     }
+  },
+  {
+    "id": "e1783486197578d12p",
+    "name": "AshFroaki",
+    "pfp": "https://cdn.discordapp.com/avatars/871012961018318878/648ba9205d702bf9c7418dc6ebe78e40.png?size=1024",
+    "tier": "C",
+    "stats": {
+      "control": "D",
+      "chainkill": "C",
+      "front_kill": "C",
+      "orbit": "C",
+      "grappling": "C",
+      "consistency": "C",
+      "pathing": "C"
+    },
+    "notes": "",
+    "tags": [],
+    "gallery": [],
+    "missions": {}
   },
   {
     "id": "e17835122556668fc9",
