@@ -1218,7 +1218,7 @@ const MISSIONS = [
 // ── GitHub Storage ──
 // Public users read from data.json in the repo.
 // Admin writes require a GitHub token entered locally in the login modal.
-const GH_OWNER = 'tazandx2-arch';
+const GH_OWNER = 'UAOT-Tierlist';
 const GH_REPO  = 'Uaot';
 const GH_FILE  = 'data.json';
 const GH_BRANCH = 'main';
@@ -1283,7 +1283,7 @@ function ghPush(){
 }
 
 function ghPull(){
-  // Try raw CDN first, then fall back to GitHu API
+  // Try raw CDN first, then fall back to GitHub API
   return fetchDataRaw()
     .then(d=>{
       if(Array.isArray(d)&&d.length>0){data=d;migrate(data);}
